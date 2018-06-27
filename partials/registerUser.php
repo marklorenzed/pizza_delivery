@@ -1,4 +1,5 @@
 <?php 
+	session_start();
 	include "connect.php";
 
 	$firstName = $_POST['firstName'];
@@ -29,7 +30,8 @@
 		header("location", '../profile.php');
 
 	}else{
-		echo "Error in registration";
+		$_SESSION['errorReg'] = '*Username/email is already used';
+		header("Location: ../register.php");
 	}
 	mysqli_close($conn);
  ?>

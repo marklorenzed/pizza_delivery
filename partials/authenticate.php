@@ -31,7 +31,7 @@
 		// echo "user is valid"; 
 		$_SESSION["user"] = $uname;
 
-		header("Location: ../catalog.php"); /* Redirect browser */
+		header("Location: ../index.php"); /* Redirect browser */
 
 
 	} else {

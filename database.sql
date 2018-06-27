@@ -1,9 +1,11 @@
-CREATE TABLE users (
-	id INT NOT NULL AUTO_INCREMENT,
-	username VARCHAR(255) NOT NULL,
-	email VARCHAR(255) NOT NULL,
-	fullname VARCHAR(255) NOT NULL,
-	password VARCHAR(255) NOT NULL,
-	address VARCHAR(255) NOT NULL,
-	PRIMARY KEY (id)
-);
+INSERT INTO products(productName,price,img_path, category_id)
+VALUES("Badolla Black",6900,"assets/img/dress_shoes/badolla_black1.jpg",1);
+
+
+
+INSERT INTO products(productName,price,img_path, category_id)
+VALUES("Badolla Cognac",6900,"assets/img/dress_shoes/badolla_cognac1.jpg",1);
+
+INSERT INTO products(productName,price,img_path, category_id)
+VALUES("Badolla Midnight",6900,"assets/img/dress_shoes/badolla_midnightblack1.jpg",1);
+
