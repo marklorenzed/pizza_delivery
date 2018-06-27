@@ -1,3 +1,6 @@
+/*===========================================================
+Global styles
+============================================================*/
 * {
 	padding: 0;
 	margin:0;
@@ -15,6 +18,9 @@ footer {
 	padding: 0;
 }
 
+/*================================================
+Header styles
+=================================================*/
 .cartBtn {
 	height: 20px;
 	width: 50px;
@@ -27,6 +33,10 @@ footer {
 	transform: translate(-50%,-50%);
 }
 
+
+/*==================================================
+Catalog Styles
+====================================================*/
 .productImg {
 	margin: 5px;
 	max-width: 100%;
@@ -45,6 +55,24 @@ footer {
 }
 .productPrice {
 	position: relative;
-	top: -10%;
-	left: 10%;
+	top: -30px;
+	left: 5%;
+	font-size: 15px;
+	font-weight: 400;
+	font-family: 'Montserrat', sans-serif;
+}
+.productName {
+	position: relative;
+	top: -320px;
+	left: 5%;
+	font-size: 20px;
+	opacity: 0;
+	font-family: 'Roboto Slab', serif;
+}
+
+.product {
+	height: 300px;
+}
+.product2 {
+	height: 600px;
 }

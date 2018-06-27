@@ -34,11 +34,12 @@
 		$result = mysqli_query($conn,$sql);
 		echo "<div class = 'row'>";
 		while($row = mysqli_fetch_assoc($result)) {
-			echo "<div class='product col-md-3 p-0 m-0'>".
-				"<img class='productImg p-1 m-0' src='".$row['img_path']. "'>".
+				echo "<div class='product col-md-3 p-0 m-0'>".
+				"<img class='productImg p-1 m-0' id='productImg".$row['id']."'  src='".$row['img_path']. "'>".
 				"<p class='productPrice'>".$row['price']."</p>".
+				"<p id='productName".$row['id']."' class='productName'>".$row['productName']."</p>".
 				"</div>";
-		}
+		}		
 		echo "</div>";
 	 ?>
 
