@@ -27,7 +27,7 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-dark special-color">
+<nav class="navbar navbar-expand-lg navbar-light white">
 	
 	<a href="index.php" class="navbar-brand">My Shop</a>
 
@@ -38,10 +38,14 @@
 	<div class='collapse navbar-collapse' id='navbarContent'>
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item">
-				
-				<button type="button" class="btn btn-danger cartBtn" data-toggle="modal" data-target="#cartModal">
-					<i class="fa fa-shopping-cart cartBtnLogo" aria-hidden="true"></i>
-				</button> 
+
+				<div class="cartBtn">
+					
+				<i class="nav-link fa fa-shopping-cart cartBtnLogo" aria-hidden="true"></i>
+				</div>
+				<!-- <button id='btn1' type="button" class="btn btn-danger cartBtn" data-toggle="modal" data-target="#cartModal">
+					
+				</button>  -->
 			</li>
 
 
@@ -104,7 +108,7 @@
 
             </div>
             <div class="modal-footer d-flex justify-content-center">
-                <button type="submit "class="btn btn-default">Login</button>
+                <button type="submit "class="btn btn1 ">Login</button>
             </div>
         </div>
     </div>

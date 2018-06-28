@@ -17,6 +17,14 @@ footer {
 	min-height: 83vh;
 	padding: 0;
 }
+.container_admin{
+	min-height: 83vh;
+	
+	margin: 20px auto;
+	padding: 10px;
+	border: 0px solid black;
+	box-shadow: 0 1px 5px 0px black
+}
 
 /*================================================
 Header styles
@@ -25,21 +33,25 @@ Header styles
 	height: 20px;
 	width: 50px;
 	position: relative;
+	margin: 10px;
 }
 .cartBtnLogo{
 	position: absolute;
+	font-size: 30px;
 	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
+	/*left: 50%;*/
+	transform: translateY(-50%);
+	/*transform: translate(-50%,-50%);*/
 }
 
 
 /*==================================================
 Catalog Styles
 ====================================================*/
-.productImg {
+img[class*=productImg] {
 	margin: 5px;
-	max-width: 100%;
+	width: 100%;
+	height: 300px;
 }
 
 .landingPage {
@@ -63,11 +75,15 @@ Catalog Styles
 }
 .productName {
 	position: relative;
-	top: -320px;
-	left: 5%;
+	top: -200px;
+	left: 50%;
+	transform: translateX(-50%);
 	font-size: 20px;
-	opacity: 0;
+	visibility: hidden;
 	font-family: 'Roboto Slab', serif;
+	color: white;
+	text-transform: uppercase;
+	text-align: center;
 }
 
 .product {
@@ -75,4 +91,76 @@ Catalog Styles
 }
 .product2 {
 	height: 600px;
+}
+.prodModalImg {
+	height: 200px;
+}
+button[class*=btn1] {
+	border-radius: 50px;
+	background-color: #2c2c2c;
+	color: white;
+}
+
+
+
+
+
+
+/*=====================================
+Admin Page
+=====================================*/
+
+.product_admin_image {
+	width: 300px;
+	display: block;
+}
+.product_admin {
+	height: 340px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid gray;
+	box-shadow: 0 4px 4px -2px gray;
+}
+.product_admin div[class*=row]{
+	height: 320px;
+	padding: 5px;
+
+}
+.product_admin div[class*=row] div[class*=col-5]{
+	padding-top: 20px;
+	position: relative;
+}
+.product_admin div[class*=row] div[class*=col-5] button[class*=btn2]{
+	border-radius: 50px;
+	background-color: indianred;
+	color: white;
+	position: absolute;
+	bottom: 5px;
+	left: 100px;
+
+}
+.product_admin div[class*=row] div[class*=col-5] button[class*=btn1]{
+	border-radius: 50px;
+	background-color: #2c2c2c;
+	color: white;
+	position: absolute;
+	bottom: 5px;
+
+}	
+.editBtn{
+	background-color: #e53935;
+	border-radius: 100%;
+	height: 60px;
+	width: 60px;
+	border: 1px solid #e53935;
+	color: white;
+	position:absolute;
+	right: 20px;
+	bottom: 50px;
+	position: fixed;
+	box-shadow: 2px 2px 3px 0 gray;
+	z-index: 1000;
+}
+.editBtn:hover {
+	background-color: #ef5350;
+	transition: 0.5s;
 }

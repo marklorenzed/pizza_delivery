@@ -40,12 +40,12 @@
 					<div class="md-form mb-5">
 						<i class="fa fa-sort-spoon prefix" aria-hidden="true"></i>
                     	<input type="text" id="firstNameReg" name="firstName" class="form-control validate">
-                    	<label data-error="wrong" data-success="right" for="firstNameReg">First name</label>
+                    	<label for="firstNameReg">First name</label>
                 	</div>
                 	<div class="md-form mb-5">
                 		<i class="fa fa-sort-spoon prefix" aria-hidden="true"></i>
                     	<input type="text" id="lastNameReg" name="lastName" class="form-control validate">
-                    	<label data-error="wrong" data-success="right" for="lastNameReg">Last name</label>
+                    	<label for="lastNameReg">Last name</label>
                 	</div>
                 	
 	                <div class="md-form mb-5">
@@ -62,13 +62,13 @@
 	                <div class="md-form mb-5">
 	                    <i class="fa fa-lock prefix grey-text"></i>
 	                    <input type="password" id="passReg" name="password" class="form-control validate">
-	                    <label data-error="wrong" data-success="right" for="passReg">Your password</label>
+	                    <label for="passReg">Your password</label>
 	                </div>
 
 	                <div class="md-form mb-5">
 	                    <i class="fa fa-lock prefix grey-text"></i>
 	                    <input type="password" id="cpassReg" name="confirmPassword" class="form-control validate">
-	                    <label data-error="wrong" data-success="right" for="cpassReg">Confirm password</label>
+	                    <label for="cpassReg">Confirm password</label>
 	                </div>	
 	               
 	                <div class="modal-footer d-flex justify-content-center">
