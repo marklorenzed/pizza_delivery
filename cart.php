@@ -40,7 +40,7 @@
 						<td>".$result2['qty']."</td>
 						<td>".$result2['price']."</td>
 						<td>".$subtotal."</td>	
-						<td class='cartItemDelete'><button class= 'removeItem' id='remove_".$result2['id']."'>x</button></td>	
+						<td class='cartItemDelete'><button class= 'removeItem' onclick='deleteFromCart(".$result2['id'].")' id='remove_".$result2['id']."'>x</button></td>	
 					</tr>";
 			$total += $subtotal;
 					

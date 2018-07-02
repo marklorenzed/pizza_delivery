@@ -41,7 +41,8 @@
 									"<p class='productDesc_admin'>".$row['description']."</p>".
 
 									"<button class='btn btn1' data-toggle='modal'  data-target='#productEdit".$row['id']."'> <i class='fa fa-edit'></i> </button>".
-									"<button class='btn btn2'><i class='fa fa-trash-o'></i></button>".
+
+									"<button class='btn btn2' data-toggle='modal'  data-target='#productDelete".$row['id']."' ><i class='fa fa-trash-o'></i></button>".
 								"</div>".
 							"</div>".
 						  "</div>";
@@ -57,7 +58,7 @@
 						            "</div>".
 						            "<div class='modal-body '>".
 						                "<form enctype='multipart/form-data'>".
-						                	"<input type='number' id = 'hiddenId' name='id' class='form-control' value =".$row['id'].">".
+						                	"<input type='number' name='id' class='form-control hiddenId' value =".$row['id'].">".
 							            	"Item Name: <input type='text' name='itemName' class='form-control' value =".$row['productName']."><br>
 							            	Category: <input type='number' name='category' class='form-control'><br>
 							            	Price: <input type='number' name='price' class='form-control' value =".$row['price']."><br>
@@ -74,6 +75,27 @@
 						        </div>
 						    </div>
 						</form>";
+					echo "<form action='partials/editItem.php' method='POST' class='modal fade' id='productDelete".$row['id']."' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>".
+						    "<div class='modal-dialog' role='document'>".
+						        "<div class='modal-content'>".
+						            "<div class='modal-header text-center'>".
+						                "<h4 class='modal-title w-100 font-weight-bold'>".$row['productName']."</h4>".
+						                "<button type='button' class='close' data-dismiss='modal' aria-label='Close'>".
+						                    "<span aria-hidden='true'>&times;</span>".
+						                "</button>".
+						            "</div>".
+						            "<div class='modal-body '>".
+						                "<form enctype='multipart/form-data' class=' m-auto'>".
+						                	"Are you sure you want to delete this item?<br>" .
+							            	 "<button type = 'submit' class = 'btn btn1' onclick = 'deleteItem(".$row['id'].")'>".
+						                		"Yes".
+						                	 "</button>".
+						            	"</form>".
+
+						            "</div>
+						        </div>
+						    </div>
+						</form>";	
 				};				
 			echo "</div>";
 			echo "</div>";
@@ -112,7 +134,7 @@
 	                	Price: <input type="number" name="price" class="form-control"><br>
 	                	<br>
 	                	Description: <input type="text" name="description" class="form-control"><br>
-	                	Image: <input type="file" name="gameImg" class="form-control"><br>
+	                	Image: <input type="file" name="itemImg" class="form-control"><br>
 	                	<button type="submit">Save new item </button>
 	                	
 	                </form>	

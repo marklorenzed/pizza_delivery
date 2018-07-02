@@ -36,3 +36,28 @@ function addToCart(id){
 	});
 
 }
+
+function deleteItem(id){
+	$.ajax({
+		"url":"partials/deleteItem.php",
+		"data": {"id":id},
+		"type": "POST",
+		"success": function(data){
+			alert("Item is successfuly deleted");
+			location.reload();
+			
+		}
+	});
+}
+
+function deleteFromCart(id){
+	$.ajax({
+		"url":"partials/deleteCartItem.php",
+		"data": {"id":id},
+		"type": "POST",
+		"success": function(data){
+
+			location.reload();
+		}
+	});
+}

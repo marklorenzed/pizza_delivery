@@ -7,7 +7,7 @@
 	$id = $_POST['id'];
 
 	$sql = "SELECT * FROM products WHERE id = $id";
-
+	
 	$result = mysqli_query($conn, $sql);
 	$result2 = mysqli_fetch_assoc($result);
 
