@@ -22,16 +22,17 @@ function hideName(id){
 
 
 function addToCart(id){
-	
 	var quantity = $("#quantity"+id).val();
-	alert("you have purchased " + quantity + " of item "+ id);
+
 	$.ajax({
 		"url":"partials/addToCart.php",
 		"data": {"quantity":quantity, "id":id},
 		//throws to addToCart.php the ID of item selected as well as the quantity
-		"type": "GET",
+		"type": "POST",
 		"success": function(data){
-			alert(data);
+			alert(data)
+			
 		}
-	})
+	});
+
 }

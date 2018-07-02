@@ -14,12 +14,16 @@
 	$sql = "SELECT * FROM customers WHERE username = '$uname' AND password= '$hashpw'";
 	$result = mysqli_query($conn,$sql);
 	$row_count = mysqli_num_rows($result);
+	$result2 = mysqli_fetch_assoc($result);
 
 	
 	function authenticate($row_count){
 		if($row_count > 0){
+
 			return true;
+			
 		}else {
+			
 			return false;
 		}
 	}
@@ -30,9 +34,14 @@
 	if (authenticate($row_count)) {
 		// echo "user is valid"; 
 		$_SESSION["user"] = $uname;
+		$_SESSION['role'] = $result2['role'];
+		if($_SESSION['role'] == "admin"){
+			header("location: ../adminPage.php");
+		}else{
+			header("Location: ../index.php"); /* Redirect browser */
 
-		header("Location: ../index.php"); /* Redirect browser */
-
+		}
+		
 
 	} else {
 

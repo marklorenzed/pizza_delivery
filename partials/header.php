@@ -27,7 +27,7 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light white">
+<nav class="navbar navbar-expand-lg navbar-light white" id="top">
 	
 	<a href="index.php" class="navbar-brand">My Shop</a>
 
@@ -41,7 +41,7 @@
 
 				<div class="cartBtn">
 					
-				<i class="nav-link fa fa-shopping-cart cartBtnLogo" aria-hidden="true"></i>
+					<a class="nav-link  cartBtnLogo" href="cart.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
 				</div>
 				<!-- <button id='btn1' type="button" class="btn btn-danger cartBtn" data-toggle="modal" data-target="#cartModal">
 					
@@ -72,7 +72,9 @@
 			</li>
 			
 			<li class="nav-item">
-
+				<div class="cartBtn">
+					<a href="cart.php" class="nav-link cartBtnLogo"><i class="fa fa-shopping-cart "></i></a>
+				</div>
 			</li>
 		</ul>
 	</div>
@@ -114,6 +116,4 @@
     </div>
 </form>
 <!-- login Modal end -->
-
-<!-- cart modal -->
 

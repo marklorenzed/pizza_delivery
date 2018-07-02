@@ -11,10 +11,11 @@
 </head>
 <body>
 
+
 <div class="container">
 
+	<div class="backtotop"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
 
-	
 		<div class="row">
 			<div class="col-md-6 col-6 p-0">
 				<img class="landingImg" src="assets/img/bag_model.jpg">
@@ -51,19 +52,19 @@
 					                    "<span aria-hidden='true'>&times;</span>".
 					                "</button>".
 					            "</div>".
-					            "<div class='modal-body '>".
+					            "<div class='modal-body'>".
 					           	"<div class='row'>".
 					            	"<div class ='col-6' >".
 					            		"<img class = 'prodModalImg' src = '".$row['img_path']."'>".
 					            	"</div>".
 					            	"<div class = 'col-6'>".
-					            		"<p>".$row['productName']."</p>".
+					            		"<p id= 'productName".$row['id']."'>".$row['productName']."</p>".
 					            		"<p>".$row['price']."</p>".
 					            		"<p>".$row['description']."</p>".
 
 
 					            		"<input class='form-control' type = 'number' name = 'quantity' id = 'quantity".$row['id'] . "'>".
-					            		"<button onclick='addToCart(".$row['id'].")' type = 'submit' class = 'btn btn1'>".
+					            		"<button  onclick='addToCart(".$row['id'].")' type = 'submit' class = 'btn btn1'>".
 					            			"Add to Cart".
 					            		"</button>".
 					            	"</div>".
@@ -74,6 +75,8 @@
 					</div>";
 		}	
 		echo "</div>";
+
+
 
 	 ?>
 

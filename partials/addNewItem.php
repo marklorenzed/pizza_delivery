@@ -5,11 +5,12 @@
 	$category = $_POST['category'];
 	$price = $_POST['price'];
 	$desc = $_POST['description'];
+	
 
-	$filename = $_FILES['gameImg']['name'];
-	$filesize = $_FILES['gameImg']['size'];
-	$file_tmpname = $_FILES['gameImg']['tmp_name'];
-	$file_type = $_FILES['gameImg']['type'];
+	$filename = $_FILES['itemImg']['name'];
+	$filesize = $_FILES['itemImg']['size'];
+	$file_tmpname = $_FILES['itemImg']['tmp_name'];
+	$file_type = $_FILES['itemImg']['type'];
 	//$_FILES['name in the form']['property']
 	//list of properties commonly used:
 	//name,size, tmp_name, type
