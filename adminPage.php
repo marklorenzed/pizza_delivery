@@ -30,7 +30,7 @@
 			</button>";
 
 				while($row = mysqli_fetch_assoc($result)) {
-					echo "<div  id = 'admin".$row['id']."' class='product_admin col-12 col-md-6'>".
+					echo "<div  id = 'admin".$row['id']."' class='product_admin col-12 col-md-6 p-2'>".
 							"<div class = 'row'>".
 								"<div class='col-7'>".
 									"<img class='product_admin_image  m-0' id='product_admin".$row['id']."' src='".$row['img_path']. "'>".

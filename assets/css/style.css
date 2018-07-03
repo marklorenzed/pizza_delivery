@@ -7,51 +7,44 @@ Global styles
 }
 
 footer {
-	height: 100px;
+	height: 10vh;
 	background-color: #2c2c2c;
 	color: #eee;
 	padding: 20px;
+
 }
 
 .container {
-	min-height: 83vh;
+	min-height: 85vh;
 	padding: 0;
 }
 .container_admin{
 	min-height: 83vh;
-	
 	margin: 20px auto;
 	padding: 10px;
-	border: 0px solid black;
-	box-shadow: 0 1px 5px 0px black
+	/*border: 0px solid black;
+	box-shadow: 0 1px 5px 0px black*/
 }
-
+a {
+	text-decoration: none;
+	color: black;
+}
 
 
 /*================================================
 Header styles
 =================================================*/
-.cartBtn {
-	height: 20px;
-	width: 50px;
-	position: relative;
-	margin: 10px;
+.head {
+	height: 100px;
+	width: 100%
+	background-color: #eee;
+
 }
+
 .cartBtnLogo{
-	position: absolute;
-	font-size: 30px;
-	top: 50%;
-	/*left: 50%;*/
-	transform: translateY(-50%);
-	/*transform: translate(-50%,-50%);*/
+	
 }
-.navbar-brand {
-	font-family: 'Galada', cursive;
-	font-size: 70px;
-	position: relative;
-	left: 50%;
-	transform: translate(-50%,0);
-}
+
 .cartBtn::after {
 	content: '';
 	height: 20px;
@@ -87,11 +80,7 @@ img[class*=productImg] {
 	width: 100%;
 }
 .productPrice {
-	position: relative;
-	top: -30px;
-	left: 5%;
-	font-size: 15px;
-	font-weight: 400;
+	
 	font-family: 'Montserrat', sans-serif;
 }
 .productName {
@@ -110,9 +99,13 @@ img[class*=productImg] {
 .product {
 	height: 300px;
 }
-.product2 {
-	height: 600px;
+.productWrapper {
+	height: 400px;
 }
+.productName2 {
+	font-size: 20px;
+}
+
 .prodModalImg {
 	height: 100%;
 	width: 100%;
@@ -149,11 +142,16 @@ button[class*=btn1] {
 	transform: translate(-50%,-50%);
 }
 
-.shopCategory {
+.categories {
+	font-family: 'Hind Siliguri', sans-serif;
+	text-align: center;
 	position: relative;
-	top: -40px;
-	right: -10px;
 }
+
+.underline {
+	border-bottom: 2px solid #2c2c2c;
+}
+	
 
 /*=====================================
 Admin Page
@@ -167,7 +165,7 @@ Admin Page
 	height: 340px;
 	margin-bottom: 20px;
 	border-bottom: 1px solid gray;
-	box-shadow: 0 4px 4px -2px gray;
+	box-shadow: 1px 1px 5px 0 gray;
 }
 .product_admin div[class*=row]{
 	height: 320px;
@@ -244,4 +242,63 @@ button[class*= btn2] {
 	border-radius: 50px;
 	background-color: indianred;
 	color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+	
+
+}
+
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+	
+
+}
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+	.productName2{
+		display: none;
+	}
+
+}
+
+/*// Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+.productPrice {
+	position: relative;
+	top: -30px;
+	left: 5%;
+	font-size: 15px;
+	font-weight: 400;
+	font-family: 'Montserrat', sans-serif;
+}
+.productWrapper {
+	height: 300px;
 }

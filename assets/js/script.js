@@ -89,7 +89,10 @@ function checkCategory(i){
 		"data":{"category":i},  
 		"success":function(data){  
 		     $("#product_loading").html(data);
-
+		     $("#"+i).addClass('underline');
+		     $("#"+i).siblings().removeClass('underline'); 
 			}  
 	});
+
+
 }

@@ -14,7 +14,7 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
 	
 	<!-- google fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Galada" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Bree+Serif|Hind+Siliguri:700" rel="stylesheet">
 
 </head>
 <body>
@@ -28,65 +28,40 @@
  ?>
 
 
-
-
-
-<nav class="navbar navbar-expand-lg navbar-light white" id="top">
-	
-	<a href="index.php" class="navbar-brand">Duma's</a>
-
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
-		<span class="navbar-toggle-icon"><i class="fa fa-navicon" aria-hidden="true"></i></span>
-	</button>
-<?php  if(!isset($_SESSION['user'])){ ?>
-	<div class='collapse navbar-collapse' id='navbarContent'>
-		<ul class="navbar-nav ml-auto">
-			<li class="nav-item">
-
-				<div class="cartBtn">
-					
-					<a class="nav-link  cartBtnLogo" href="cart.php"><i class="fa fa-shopping-cart"></i></a>
-				</div>
-				<!-- <button id='btn1' type="button" class="btn btn-danger cartBtn" data-toggle="modal" data-target="#cartModal">
-					
-				</button>  -->
-			</li>
-
-
-			<li class="nav-item">
-				<a href="" class="nav-link" data-toggle="modal" data-target="#loginModal">Sign-In</a>
-			</li>
-
-			<li class="nav-item">
-				  	<a href="register.php" class="nav-link">Sign-Up</a>
-			</li>
-		</ul>
-	</div>
-<?php  } else { ?>
-	<div class='collapse navbar-collapse' id='navbarContent'>
-		<ul class="navbar-nav ml-auto">
-
-			<li class="nav-item dropdown">
-				<a id="navbarDropdownMenuLink" data-toggle="dropdown" class="nav-link dropdown-toggle"><?php echo $_SESSION['user'] ?></a>
-				<div class="dropdown-menu dropdown-primary">
-				    <a class="dropdown-item" href="profile.php">Acount</a>
-				    <a class="dropdown-item" href="logout.php">Logout</a>
-				                    
-				</div>
-			</li>
+<header class="container-fluid" id="top">
+	<div class="row head">
+		<div class="col-12">
 			
-			<li class="nav-item">
-				<div class="cartBtn">
-					<a href="cart.php" class="nav-link cartBtnLogo"><i class="fa fa-shopping-cart "></i></a>
-				</div>
-			</li>
-		</ul>
+
+		</div>
+		<div class="brandLogo">
+			<a href="index.php"><p class="brandName">Duma's</p></a>
+		</div>
+		<a href="products.php">Shop</a>
+		<div class="cartBtnLogo"><i class="fa fa-shopping-cart"></i></div>
+
+		<?php  if(!isset($_SESSION['user'])){ ?>
+
+		<a href="" class="" data-toggle="modal" data-target="#loginModal">Sign-In</a>
+		<a href="register.php" class="">Sign-Up</a>
+		<?php  } else { ?>
+		<a id="navbarDropdownMenuLink" data-toggle="dropdown" class="nav-link dropdown-toggle"><?php echo $_SESSION['user'] ?></a>
+		<div class="dropdown-menu dropdown-primary">
+			<a class="dropdown-item" href="profile.php">Acount</a>
+			<a class="dropdown-item" href="logout.php">Logout</a>
+				                    
+		</div>
+		<?php  } ?>
 	</div>
+</header>
 
 
-<?php  } ?>
 
-</nav>
+
+
+
+
+
 
 
 <!-- login Modal -->

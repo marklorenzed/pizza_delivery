@@ -14,9 +14,10 @@
       {  
            while($row = mysqli_fetch_assoc($result))  
            {  
-                $output .= "<div class='col-6 col-md-3 p-2'>".
+                $output .= "<div class='col-6 col-md-4 col-lg-3 mb-2 pr-2 pb-2 pt-0 pl-0 productWrapper'>".
                               "<div data-toggle='modal'  data-target='#productModal".$row['id']."' id = 'product".$row['id']."' class='product animated fadeIn  p-0'>". 
                                 "<img class='productImg  m-0' id='productImg".$row['id']."' onmouseover = 'showName(".$row['id'].")' onmouseout= 'hideName(".$row['id'].")' src='".$row['img_path']. "'>".
+                                "<p class='productName2 m-0'>".$row['productName']."</p>".
   							                "<p class='productPrice'> ₱".$row['price'].".00</p>".
   							                "<p onmouseover = 'showName(".$row['id'].")' onmouseout= 'hideName(".$row['id'].")' id='productName".$row['id']."' class='productName'>".$row['productName']."</p>".
   					                 "</div>".
