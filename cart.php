@@ -32,7 +32,7 @@
 	if(isset($_SESSION['cart']))
 	{
 		
-		foreach ($_SESSION['cart'] as $productId => $result2) 
+		foreach ($_SESSION['cart'] as $id => $result2) 
 		{
 			$subtotal = ($result2['qty']*$result2['price']);
 			echo "	<tr>
@@ -40,9 +40,22 @@
 						<td>".$result2['qty']."</td>
 						<td>".$result2['price']."</td>
 						<td>".$subtotal."</td>	
-						<td class='cartItemDelete'><button class= 'removeItem' onclick='deleteFromCart(".$result2['id'].")' id='remove_".$result2['id']."'>x</button></td>	
+						<td class='cartItemDelete'><button class= 'removeItem' data-toggle='modal'  data-target='#deleteCartItem".$result2['id']."'>x</button></td>	
 					</tr>";
 			$total += $subtotal;
+
+			echo "<div class='modal fade' id='deleteCartItem".$result2['id']."' tabindex='-1'>".
+                                        "<div class='modal-dialog' role='document'>".
+                                            "<div class='modal-content p-3'>".
+                                                "<div class='modal-body'>".
+                                                "<div class='row'>".
+                                                	"<h4>Do you want to remove this item from the cart?</h4>".
+                                                	"<br>".
+                                                  	"<button class = 'm-auto btn btn2' onclick='deleteFromCart(".$result2['id'].")' id='remove_".$result2['id']."'>Yes</button>".
+                                                "</div>
+                                            </div>
+                                        </div>
+                                    </div>" ; 
 					
 		}	
 	}

@@ -27,7 +27,6 @@
 		
 	}
 
-
 	if (isset($_SESSION['totalCartItem'])) 
 	{
 		$currentTotalQty = $_SESSION['totalCartItem'];
@@ -37,6 +36,7 @@
 	{
 		$_SESSION['totalCartItem'] = $quantity;
 	}
+
 
 	echo $_SESSION['totalCartItem'];
 	

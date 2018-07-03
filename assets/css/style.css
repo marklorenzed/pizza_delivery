@@ -26,6 +26,8 @@ footer {
 	box-shadow: 0 1px 5px 0px black
 }
 
+
+
 /*================================================
 Header styles
 =================================================*/
@@ -43,8 +45,26 @@ Header styles
 	transform: translateY(-50%);
 	/*transform: translate(-50%,-50%);*/
 }
+.navbar-brand {
+	font-family: 'Galada', cursive;
+	font-size: 70px;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%,0);
+}
+.cartBtn::after {
+	content: '';
+	height: 20px;
+	width: 20px;
+	border-radius: 100%;
+	background-color: red;
+	display: block;
+	position: absolute;
+	right: 0;
+	top: -10px;
+	z-index: 1000;
 
-
+}
 /*==================================================
 Catalog Styles
 ====================================================*/
@@ -62,7 +82,8 @@ img[class*=productImg] {
 	margin-top: 50px;
 }
 .landingImg {
-	height: 100%;
+	min-height: 450px;
+	max-height: 450px;
 	width: 100%;
 }
 .productPrice {
@@ -93,7 +114,8 @@ img[class*=productImg] {
 	height: 600px;
 }
 .prodModalImg {
-	height: 200px;
+	height: 100%;
+	width: 100%;
 }
 button[class*=btn1] {
 	border-radius: 50px;
@@ -102,9 +124,36 @@ button[class*=btn1] {
 }
 
 
+.backtotop {
+	background-color: #1c1c1c;
+	border-radius: 30px;
+	border: none;
+	width: 70px;
+	height: 40px;
+	color: #eee;
+	position: absolute;
+	z-index: 10000;
+	bottom: 20px;
+	right: 20px;
+	position: fixed;
+	box-shadow: 0 1px 5px 0px black
+}
+.backtotop:hover {
+	background-color: #0c0c0c;
+	color: #eee;
+}
+.fa-angle-up {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
 
-
-
+.shopCategory {
+	position: relative;
+	top: -40px;
+	right: -10px;
+}
 
 /*=====================================
 Admin Page
@@ -188,4 +237,11 @@ CART STYLES
 
 .hiddenId {
 	display: none;
+}
+
+
+button[class*= btn2] {
+	border-radius: 50px;
+	background-color: indianred;
+	color: white;
 }

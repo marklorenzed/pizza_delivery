@@ -3,7 +3,9 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/animate.css">
 	<!-- mdboostrap -->
+
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!-- Bootstrap core CSS -->
@@ -11,7 +13,9 @@
 	<!-- Material Design Bootstrap -->
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
 	
-	
+	<!-- google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Galada" rel="stylesheet">
+
 </head>
 <body>
 
@@ -29,7 +33,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light white" id="top">
 	
-	<a href="index.php" class="navbar-brand">My Shop</a>
+	<a href="index.php" class="navbar-brand">Duma's</a>
 
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
 		<span class="navbar-toggle-icon"><i class="fa fa-navicon" aria-hidden="true"></i></span>
@@ -41,7 +45,7 @@
 
 				<div class="cartBtn">
 					
-					<a class="nav-link  cartBtnLogo" href="cart.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+					<a class="nav-link  cartBtnLogo" href="cart.php"><i class="fa fa-shopping-cart"></i></a>
 				</div>
 				<!-- <button id='btn1' type="button" class="btn btn-danger cartBtn" data-toggle="modal" data-target="#cartModal">
 					
