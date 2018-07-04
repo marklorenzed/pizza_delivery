@@ -58,12 +58,14 @@
                                     </div>" ; 
 					
 		}	
+
+		
 	}
 		
 	else 
 	{	
 		echo "<h4 class='text-danger'>No Item on the cart</h4>";
-	}
+	}	
 
 	 ?>
 
@@ -71,10 +73,43 @@
 			<td></td>	
 			<td></td>	
 			<td>Grand Total: </td>	
-			<td><?php echo $total; ?></td>	
+			<td><?php 
+				if(isset($_SESSION['cart'])){
+					echo $_SESSION['grandTotal'];
+				}
+				else {
+					echo 0;
+				}
+			?></td>	
 		</tr>
 	</table>
-		
+
+	<button data-toggle='modal'  data-target='#proceed' >Check Out</button>	
+
+	<div class='modal fade' id='proceed' tabindex='-1'>
+		<div class='modal-dialog' role = 'document'>
+			<div class='modal-content'>
+				<div class='modal-body'>
+					<?php 
+						echo "<p>".$_SESSION['firstName']." ".$_SESSION['lastName']."</p>";
+						echo "<input id='address' name='address' type='text' value='".$_SESSION['address']."'>";
+						if(isset($_SESSION['cart'])){
+											echo "<div>₱".$_SESSION['grandTotal']."</div>";
+										}
+										else {
+											echo "<div>₱0</div>";
+										}
+
+
+					 ?>
+
+
+
+					<button class="m-auto btn btn2" onclick="checkOut()">Proceed</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </div>
 	

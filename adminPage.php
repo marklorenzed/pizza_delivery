@@ -30,19 +30,26 @@
 			</button>";
 
 				while($row = mysqli_fetch_assoc($result)) {
-					echo "<div  id = 'admin".$row['id']."' class='product_admin col-12 col-md-6 p-2'>".
-							"<div class = 'row'>".
+					echo "<div  id = 'admin".$row['id']."' class='product_admin col-12 col-lg-6 '>".
+							"<div class = 'row p-3'>".
 								"<div class='col-7'>".
 									"<img class='product_admin_image  m-0' id='product_admin".$row['id']."' src='".$row['img_path']. "'>".
 								"</div>".
-								"<div class='col-5'>".
+								"<div class='col-5 p-3'>".
+									
+									"<div class='row p-0 mb-3'>".
+										"<div class='col-lg-6 col-6'>".
+											"<button class='btn btn1 m-0' data-toggle='modal'  data-target='#productEdit".$row['id']."'> <i class='fa fa-edit'></i> </button>".
+										"</div>".
+										"<div class='col-lg-6 col-6'>".
+											"<button class='btn btn2 m-0' data-toggle='modal'  data-target='#productDelete".$row['id']."' ><i class='fa fa-trash-o'></i></button>".
+										"</div>".
+									"</div>".
+
 									"<p id='productName".$row['id']."' class='productName_admin'>".$row['productName']."</p>".
 									"<p class='productPrice_admin'>".$row['price']."</p>".
 									"<p class='productDesc_admin'>".$row['description']."</p>".
-
-									"<button class='btn btn1' data-toggle='modal'  data-target='#productEdit".$row['id']."'> <i class='fa fa-edit'></i> </button>".
-
-									"<button class='btn btn2' data-toggle='modal'  data-target='#productDelete".$row['id']."' ><i class='fa fa-trash-o'></i></button>".
+										
 								"</div>".
 							"</div>".
 						  "</div>";

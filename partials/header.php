@@ -7,14 +7,14 @@
 	<!-- mdboostrap -->
 
 	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 	<!-- Bootstrap core CSS -->
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Material Design Bootstrap -->
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
 	
 	<!-- google fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Bree+Serif|Hind+Siliguri:700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Bree+Serif|Galada|Hind+Siliguri:700" rel="stylesheet">
 
 </head>
 <body>
@@ -28,30 +28,29 @@
  ?>
 
 
-<header class="container-fluid" id="top">
-	<div class="row head">
-		<div class="col-12">
+<header class="container-fluid p-0" id="top">
+	<div class="head">
+
+			<a class="brandLogo" href="index.php">Duma's</a>
+			<a class="shopIcon" href="products.php">Shop <i class="fas fa-shopping-bag"></i></a>
+			<a  class="cartBtnLogo" href="cart.php"><img class="cartIcon" src="assets/img/cart.svg"></a>
+
+			<?php  if(!isset($_SESSION['user'])){ ?>
+
+			<a href="" class="" data-toggle="modal" data-target="#loginModal">Sign-In</a>
+			<a href="register.php" class="">Sign-Up</a>
+
+			<?php  } else { ?>
 			
-
-		</div>
-		<div class="brandLogo">
-			<a href="index.php"><p class="brandName">Duma's</p></a>
-		</div>
-		<a href="products.php">Shop</a>
-		<div class="cartBtnLogo"><i class="fa fa-shopping-cart"></i></div>
-
-		<?php  if(!isset($_SESSION['user'])){ ?>
-
-		<a href="" class="" data-toggle="modal" data-target="#loginModal">Sign-In</a>
-		<a href="register.php" class="">Sign-Up</a>
-		<?php  } else { ?>
-		<a id="navbarDropdownMenuLink" data-toggle="dropdown" class="nav-link dropdown-toggle"><?php echo $_SESSION['user'] ?></a>
-		<div class="dropdown-menu dropdown-primary">
-			<a class="dropdown-item" href="profile.php">Acount</a>
-			<a class="dropdown-item" href="logout.php">Logout</a>
-				                    
-		</div>
-		<?php  } ?>
+			<a id="navbarDropdownMenuLink" data-toggle="dropdown" class="nav-link dropdown-toggle"><?php echo $_SESSION['user'] ?></a>
+			
+			<div class="dropdown-menu dropdown-primary">
+				<a class="dropdown-item" href="profile.php">Acount</a>
+				<a class="dropdown-item" href="logout.php">Logout</a>
+					                    
+			</div>
+		
+			<?php  } ?>
 	</div>
 </header>
 

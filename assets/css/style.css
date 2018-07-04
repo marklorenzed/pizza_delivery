@@ -40,11 +40,19 @@ Header styles
 	background-color: #eee;
 
 }
-
-.cartBtnLogo{
-	
+.head {
+	position: relative;
 }
-
+.cartBtnLogo{
+	font-size: 20px;
+	position: absolute;
+	right: 30px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.cartIcon{
+	height: 30px;
+}
 .cartBtn::after {
 	content: '';
 	height: 20px;
@@ -56,7 +64,21 @@ Header styles
 	right: 0;
 	top: -10px;
 	z-index: 1000;
-
+}
+.brandLogo {
+	font-size: 40px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	font-family: 'Galada', cursive;
+}
+.shopIcon{
+	position: absolute;
+	left: 30px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 20px;
 }
 /*==================================================
 Catalog Styles
@@ -158,40 +180,38 @@ Admin Page
 =====================================*/
 
 .product_admin_image {
-	width: 300px;
+	max-width: 100%;
 	display: block;
+	max-height: 300px;
 }
 .product_admin {
-	height: 340px;
+	min-height: 340px;
+	max-height: 400px;
 	margin-bottom: 20px;
 	border-bottom: 1px solid gray;
 	box-shadow: 1px 1px 5px 0 gray;
+	max-height: 350px;
 }
 .product_admin div[class*=row]{
-	height: 320px;
+	max-height: 320px;
 	padding: 5px;
 
 }
 .product_admin div[class*=row] div[class*=col-5]{
 	padding-top: 20px;
 	position: relative;
+	height: 100%;
 }
 .product_admin div[class*=row] div[class*=col-5] button[class*=btn2]{
 	border-radius: 50px;
 	background-color: indianred;
 	color: white;
-	position: absolute;
-	bottom: 5px;
-	left: 100px;
 
 }
 .product_admin div[class*=row] div[class*=col-5] button[class*=btn1]{
 	border-radius: 50px;
 	background-color: #2c2c2c;
 	color: white;
-	position: absolute;
-	bottom: 5px;
-
 }	
 .editBtn{
 	background-color: #e53935;
@@ -301,4 +321,16 @@ button[class*= btn2] {
 }
 .productWrapper {
 	height: 300px;
+}
+.brandLogo {
+	font-size: 70px;
+}
+.shopIcon {
+	font-size: 30px; 
+}
+.cartBtnLogo {
+	font-size: 30px;
+}
+.cartIcon{
+	height: 40px;
 }

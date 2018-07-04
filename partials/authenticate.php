@@ -34,6 +34,11 @@
 	if (authenticate($row_count)) {
 		// echo "user is valid"; 
 		$_SESSION["user"] = $uname;
+		$_SESSION['firstName'] = $result2['firstName'];
+		$_SESSION['lastName'] = $result2['lastName'];
+		$_SESSION['address'] = $result2['address'];
+		$_SESSION['email'] = $result2['email'];
+		$_SESSION['user_id']= $result2['id'];
 		$_SESSION['role'] = $result2['role'];
 		if($_SESSION['role'] == "admin"){
 			header("location: ../adminPage.php");

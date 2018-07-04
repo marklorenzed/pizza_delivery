@@ -27,6 +27,20 @@
 		
 	}
 
+
+	if(isset($_SESSION['grandTotal']))
+	{
+		$grandTotal = $_SESSION['grandTotal'];
+		$_SESSION['grandTotal'] = $grandTotal + $_SESSION['cart'][$id]['subtotal'];
+	}
+	else
+	{
+		$_SESSION['grandTotal'] = $_SESSION['cart'][$id]['subtotal'];
+	}
+
+
+
+
 	if (isset($_SESSION['totalCartItem'])) 
 	{
 		$currentTotalQty = $_SESSION['totalCartItem'];

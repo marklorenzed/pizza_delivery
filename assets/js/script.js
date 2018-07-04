@@ -47,7 +47,7 @@ function addToCart(id){
 		//throws to addToCart.php the ID of item selected as well as the quantity
 		"type": "POST",
 		"success": function(data){
-			
+			alert(data)
 			
 		}
 	});
@@ -95,4 +95,17 @@ function checkCategory(i){
 	});
 
 
+}
+
+function checkOut(){
+	var address = $('#address').val();
+
+	$.ajax({
+		"url":"partials/checkOut.php",
+		"method": "POST",
+		"data":{"address": address},
+		"success":function(data){
+			location.reload();
+		}
+	});
 }
