@@ -14,7 +14,7 @@
 
 </head>
 <body>
-<div class="container">
+<div class="container" id="cart">
 
 
 
@@ -26,7 +26,7 @@
 						<th>Price</th>
 						<th>Subtotal</th>
 						<th></th>
-						<th></th>
+						
 					</tr>
 	<?php 
 	$total = 0;
@@ -41,8 +41,10 @@
 						<td id='cartQuantity".$result2['id']."'>".$result2['qty']."<span id='saveQuantity".$result2['id']."'></span></td>
 						<td>".$result2['price']."</td>
 						<td>".$result2['subtotal']."</td>	
-						<td class='cartItemDelete'><button class= 'removeItem' data-toggle='modal'  data-target='#deleteCartItem".$result2['id']."'>x</button> </td>	
-						<td class='text-center'><button class='editCartButton'onclick='editCartQuantity(".$result2['id'].")'>Edit</button></td>
+						<td class='text-center'>
+							<button class= 'removeItem' data-toggle='modal'  data-target='#deleteCartItem".$result2['id']."'><i class='far fa-trash-alt'></i></button>
+
+							<button class='editCartButton'onclick='editCartQuantity(".$result2['id'].")'>Edit</button></td>
 					</tr>";
 			
 
@@ -84,7 +86,7 @@
 				}
 			?></td>
 			<td></td>	
-			<td></td>	
+			
 		</tr>
 	</table>
 
@@ -112,7 +114,7 @@
 												echo "<div>₱0</div>";
 											}
 
-							echo "<button class='m-auto btn btn2' onclick='checkOut()'>Proceed</button>";
+							echo "<button class='m-auto btn btn2' type='button' data-dismiss='modal' onclick='checkOut()'>Proceed</button>";
 						}
 						else
 						{ //if user is not logged in

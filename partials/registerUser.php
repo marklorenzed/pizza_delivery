@@ -22,17 +22,13 @@
 	$row_count2 = mysqli_num_rows($result2);
 
 	if($row_count1 == 0 &&$row_count2 ==0 && ($password == $confirmpw)){
-		// echo "you can register";
 
-		$sql3 = "INSERT INTO customers(firstName,lastName,username,email,address,password) VALUES('$firstName','$lastName','$username','$email','$address','$hashpw')";
+		$sql3 = "INSERT INTO customers(firstName,lastName,username,email,address,password,role) VALUES('$firstName','$lastName','$username','$email','$address','$hashpw','user')";
 		$result3 = mysqli_query($conn, $sql3);
-		// header('Location: ../login.php');
-
-		header("location", '../profile.php');
-
+	
 	}
 	
-	if($email == null){
+	elseif($email == null){
 		$_SESSION['errorReg'] = "Please Fill All Required Field.";
 		header("Location: ../register.php");
 	}
@@ -45,5 +41,6 @@
 		$_SESSION['errorReg'] = '*Username/email is already used';
 		header("Location: ../register.php");
 	}
+	
 	
  ?>

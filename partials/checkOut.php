@@ -4,11 +4,28 @@
 
 
 	$userid = $_SESSION['user_id'];
-	$refno = rand(1000000,9999999);
+
+	//generate random reference no.
+	$refno = strtoupper(uniqid());
+
+	//check if reference no already exist in the database
+
+	$sql4 = "SELECT*FROM orders WHERE referenceNo = 'refno'";
+	$result4 = mysqli_query($conn,$sql4);
+	$row_count = mysqli_num_rows($result4);
+
+	if($row_count > 0){
+		$refno = strtoupper(uniqid());
+	}
+
+
+
 
 	$deliveryAdd = $_POST['address'];
 
 	$sql1 = "INSERT INTO orders(customer_id,grandTotal,referenceNo)VALUES('$userid',".$_SESSION['grandTotal'].",'$refno')";
+
+
 	$result1 = mysqli_query($conn,$sql1);
 
 	$sql2 = "SELECT * FROM orders WHERE referenceNo = '$refno' ";
@@ -29,7 +46,21 @@
 	
 	$sql3 = "UPDATE orders SET deliveryAddress ='$deliveryAdd' WHERE id = '$order_id'";
 	$result3 = mysqli_query($conn, $sql3);
+
+	$showRefNo = "<div class='row'>
+					<div class='col-12 text-center'>
+						<h3>Thank you! Your order has been successfully completed!</h3>
+						<h4>Your order reference Number is: <h4>
+						<h2> ".$refno."</h2> 
+					</div>
+				  </div>	
+
+				";
+
+	echo $showRefNo;
+
 	
+
 	unset($_SESSION['cart']);
 	unset($_SESSION['totalCartItem']);
 	unset($_SESSION['grandTotal']);

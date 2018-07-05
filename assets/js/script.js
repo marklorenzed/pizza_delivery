@@ -108,10 +108,13 @@ function checkOut(){
 		"method": "POST",
 		"data":{"address": address},
 		"success":function(data){
-			location.reload();
+			$("#proceed").remove("hide"); 
+			$("#cart").html(data);
+			
 		}
 	});
 }
+
 
 function authenticate(){
 	var username = $("#username").val();

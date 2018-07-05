@@ -47,8 +47,6 @@
 			
 		}else{
 			$location = "index.php";
-
-			// header("Location: ../index.php"); /* Redirect browser */
 			
 		}
 		echo $location;
