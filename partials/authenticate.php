@@ -17,21 +17,21 @@
 	$result2 = mysqli_fetch_assoc($result);
 
 	
-	function authenticate($row_count){
-		if($row_count > 0){
+	// function authenticate($row_count){
+	// 	if($row_count > 0){
 
-			return true;
+	// 		return true;
 			
-		}else {
+	// 	}else {
 			
-			return false;
-		}
-	}
+	// 		return false;
+	// 	}
+	// }
 
 
-
+	
 	//if user credentials are correct, assign username to session variable. 
-	if (authenticate($row_count)) {
+	if ($row_count == 1) {
 		// echo "user is valid"; 
 		$_SESSION["user"] = $uname;
 		$_SESSION['firstName'] = $result2['firstName'];
@@ -40,23 +40,23 @@
 		$_SESSION['email'] = $result2['email'];
 		$_SESSION['user_id']= $result2['id'];
 		$_SESSION['role'] = $result2['role'];
-		if($_SESSION['role'] == "admin"){
-			header("location: ../adminPage.php");
-		}else{
-			header("Location: ../index.php"); /* Redirect browser */
 
+		if($_SESSION['role'] == "admin"){
+			// header("location: ../adminPage.php");
+			$location = "adminPage.php";
+			
+		}else{
+			$location = "index.php";
+
+			// header("Location: ../index.php"); /* Redirect browser */
+			
 		}
-		
+		echo $location;
 
 	} else {
-
-		$_SESSION['error'] = '*Invalid Username/Password';
-		header("Location: ../login.php");
-		// echo 'Incorrect login details.';
-		// echo "<a href='../login.php'>Login again</a>";
+		$error = "Login Error!";	
+		echo $error;
 	}
-
-
 
 
 	

@@ -30,7 +30,15 @@ a {
 	color: black;
 }
 
-
+#loginerrorReg {
+	color: red;
+}
+#signUplink {
+	color: #D62828;
+}
+#signUplink:hover {
+	color: #F77F00;
+}	
 /*================================================
 Header styles
 =================================================*/
@@ -53,18 +61,7 @@ Header styles
 .cartIcon{
 	height: 30px;
 }
-.cartBtn::after {
-	content: '';
-	height: 20px;
-	width: 20px;
-	border-radius: 100%;
-	background-color: red;
-	display: block;
-	position: absolute;
-	right: 0;
-	top: -10px;
-	z-index: 1000;
-}
+
 .brandLogo {
 	font-size: 40px;
 	position: absolute;
@@ -72,6 +69,19 @@ Header styles
 	top: 50%;
 	transform: translate(-50%,-50%);
 	font-family: 'Galada', cursive;
+	color: #383838;
+}
+.brandLogo:hover{
+	color: #003049;
+	font-size: 45px;
+}
+.loginIcon{
+	font-size: 20px;
+	position: absolute;
+	right: 100px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #383838;
 }
 .shopIcon{
 	position: absolute;
@@ -79,7 +89,31 @@ Header styles
 	top: 50%;
 	transform: translateY(-50%);
 	font-size: 20px;
+	color: #383838;
 }
+#loginError {
+	font-size: 20px;
+	position: absolute;
+	right: 150px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: red;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.counterWrapper{
+	width: 20px;
+	height: 20px;
+	background-color: #ff3333;
+	border-radius: 100%;
+	position: absolute;
+	right: 20px;
+	top: 30px;
+	text-align: center;
+	color: #2c2c2c;
+	visibility: visible;
+}
+
 /*==================================================
 Catalog Styles
 ====================================================*/
@@ -138,6 +172,11 @@ button[class*=btn1] {
 	color: white;
 }
 
+button[class*=btn3] {
+	border-radius: 50px;
+	background-color: indianred;
+	color: white;
+}
 
 .backtotop {
 	background-color: #1c1c1c;
@@ -264,15 +303,22 @@ button[class*= btn2] {
 	color: white;
 }
 
+#editProfileButton {
+	visibility: hidden;
+}
 
 
-
-
-
-
-
-
-
+.cartQuantityInput{
+	max-width: 40px;
+}
+.editCartButton {
+	background-color: #ff3333;
+	color: #eee;
+	width: 80px;
+	height: 30px;
+	border-radius: 30px;
+	border: none;
+}
 
 
 
@@ -325,6 +371,10 @@ button[class*= btn2] {
 .brandLogo {
 	font-size: 70px;
 }
+.brandLogo:hover{
+	font-size: 75px;
+	transition: 0.5s;
+}
 .shopIcon {
 	font-size: 30px; 
 }
@@ -333,4 +383,12 @@ button[class*= btn2] {
 }
 .cartIcon{
 	height: 40px;
+}
+.loginIcon{
+	font-size: 20px;
+	position: absolute;
+	right: 100px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #383838;
 }

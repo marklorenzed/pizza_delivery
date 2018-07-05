@@ -10,8 +10,11 @@ $('.backtotop').click(function(e){
 	e.preventDefault();
 })
 
+var cartCounter = $(".counter").text();
 
-
+if(cartCounter == 0){
+	$(".counterWrapper").css("visibility", "hidden");
+}
 
 
 
@@ -47,7 +50,7 @@ function addToCart(id){
 		//throws to addToCart.php the ID of item selected as well as the quantity
 		"type": "POST",
 		"success": function(data){
-			alert(data)
+			location.reload();
 			
 		}
 	});
@@ -108,4 +111,115 @@ function checkOut(){
 			location.reload();
 		}
 	});
+}
+
+function authenticate(){
+	var username = $("#username").val();
+	var password = $("#password").val();
+	$.ajax({
+		"url":"partials/authenticate.php",
+		"method": "POST",
+		"data":{"username": username, "password": password},
+		"success":function(data){
+
+			if(data == "Login Error!"){
+
+				$("#loginError").html(data);
+			}
+			else{
+				window.location.replace(data);
+				
+			}
+
+			
+		}
+
+	});
+}
+
+function loginFromCart(){
+	var username = $("#username1").val();
+	var password = $("#password1").val();
+	$.ajax({
+		"url":"partials/authenticate.php",
+		"method": "POST",
+		"data":{"username": username, "password": password},
+		"success":function(data){
+
+			if(data == "Login Error!"){
+
+				$("#loginError").html(data);
+			}
+			else{
+				location.reload();
+				
+			}
+
+			
+		}
+
+	});
+}
+
+
+
+function editProfile(){
+	$.ajax({
+		"url":"partials/editProfile.php",
+		"success":function(data){
+			$(".profileContent").html(data);
+			$("#editProfileButton").css('visibility', 'visible');
+		}
+	});
+
+}
+
+function saveProfile(){
+	var profileFirstName = $("#profileFirstName").val();
+	var profilelastName = $("#profilelastName").val();
+	var profileEmail = $("#profileEmail").val();
+	var profileAddress = $("#profileAddress").val();
+
+	$.ajax({
+		"url":"partials/saveEditProfile.php",
+		"method": "GET",
+		"data":{"profileFirstName": profileFirstName, 
+				"profilelastName": profilelastName, 
+				"profileEmail": profileEmail,
+				"profileAddress": profileAddress},
+		"success":function(data){
+			location.reload();
+			// alert(data);
+
+			
+
+		}
+	});
+}
+
+
+
+function editCartQuantity(id){
+
+	$.ajax({
+		"url":"partials/editCartQuantity.php",
+		"method": "GET",
+		"data":{"id":id},
+		"success":function(data){
+			$("#cartQuantity"+id).html(data);
+		}
+	});
+}
+
+function saveQuantity(id){
+	var newValue = $("#newValue"+id).val();
+
+	$.ajax({
+		"url":"partials/saveQuantity.php",
+		"method": "GET",
+		"data":{"newValue":newValue ,"id":id},
+		"success":function(data){
+			location.reload();
+		}
+	})
 }

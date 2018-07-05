@@ -28,15 +28,17 @@
 	}
 
 
-	if(isset($_SESSION['grandTotal']))
-	{
-		$grandTotal = $_SESSION['grandTotal'];
-		$_SESSION['grandTotal'] = $grandTotal + $_SESSION['cart'][$id]['subtotal'];
-	}
-	else
-	{
-		$_SESSION['grandTotal'] = $_SESSION['cart'][$id]['subtotal'];
-	}
+
+	$_SESSION['grandTotal'] = array_sum(array_column($_SESSION['cart'],'subtotal'));
+	// if(isset($_SESSION['grandTotal']))
+	// {
+	// 	$grandTotal = $_SESSION['grandTotal'];
+	// 	$_SESSION['grandTotal'] = $grandTotal + $_SESSION['cart'][$id]['subtotal'];
+	// }
+	// else
+	// {
+	// 	$_SESSION['grandTotal'] = $_SESSION['cart'][$id]['subtotal'];
+	// }
 
 
 

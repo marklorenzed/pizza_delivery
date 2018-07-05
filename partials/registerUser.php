@@ -20,6 +20,7 @@
 
 	$row_count1 = mysqli_num_rows($result1);
 	$row_count2 = mysqli_num_rows($result2);
+
 	if($row_count1 == 0 &&$row_count2 ==0 && ($password == $confirmpw)){
 		// echo "you can register";
 
@@ -29,9 +30,20 @@
 
 		header("location", '../profile.php');
 
-	}else{
+	}
+	
+	if($email == null){
+		$_SESSION['errorReg'] = "Please Fill All Required Field.";
+		header("Location: ../register.php");
+	}
+	else if($password != $confirmpw){
+		$_SESSION['errorReg'] = "Passwords did not match!";
+		header("Location: ../register.php");
+	}
+	else
+	{
 		$_SESSION['errorReg'] = '*Username/email is already used';
 		header("Location: ../register.php");
 	}
-	mysqli_close($conn);
+	
  ?>

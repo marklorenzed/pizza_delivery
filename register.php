@@ -32,28 +32,28 @@
 							unset($_SESSION['errorReg']);
 						}
 					 ?>	
-					<div class="md-form mb-5">
+					<div class="md-form mb-4">
 						<i class="fa fa-user-o prefix grey-text"></i>
                     	<input type="text" id="usernameReg" name="username" class="form-control validate">
                     	<label data-error="wrong" data-success="right" for="usernameReg">Username</label>
                 	</div>
-					<div class="md-form mb-5">
+					<div class="md-form mb-4">
 						<i class="fa fa-sort-spoon prefix" aria-hidden="true"></i>
                     	<input type="text" id="firstNameReg" name="firstName" class="form-control validate">
                     	<label for="firstNameReg">First name</label>
                 	</div>
-                	<div class="md-form mb-5">
+                	<div class="md-form mb-4">
                 		<i class="fa fa-sort-spoon prefix" aria-hidden="true"></i>
                     	<input type="text" id="lastNameReg" name="lastName" class="form-control validate">
                     	<label for="lastNameReg">Last name</label>
                 	</div>
                 	
-	                <div class="md-form mb-5">
+	                <div class="md-form mb-4">
 	                    <i class="fa fa-envelope prefix grey-text"></i>
 	                    <input type="email" id="emailReg" name="email" class="form-control validate">
 	                    <label data-error="wrong" data-success="right" for="emailReg">Your email</label>
                 	</div>
-                	<div class="md-form mb-5">
+                	<div class="md-form mb-4">
                 		<i class="fa fa-address-card prefix grey-text"></i>
                     	<input type="text" id="addressReg" name="address" class="form-control validate">
                     	<label data-error="wrong" data-success="right" for="addressReg">Address</label>
