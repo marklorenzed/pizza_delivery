@@ -29,7 +29,7 @@
 				<!-- <img  class="landingImg" src="assets/img/casual_model.jpg"> -->
 				<h2 onclick =checkCategory(2)>CASUAL SHOES</h2>
 			</div>
-			<div class="col-12 p-0 animated fadeIn categories" id="0">
+			<div class="col-4 offset-4 p-0 animated fadeIn categories mt-3" id="0">
 				<!-- <img  class="landingImg" src="assets/img/casual_model.jpg"> -->
 				<h2 onclick =checkCategory(0)>SHOP ALL</h2>
 			</div>

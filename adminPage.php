@@ -15,8 +15,9 @@
 			<i class='fa fa-plus'></i>
 		</button>
 
-
-
+		<div class="text-center">
+			<a href="orders.php">ORDER LIST</a>
+		<div>
 		<?php 
 
 		if($_SESSION['role']== "admin"){

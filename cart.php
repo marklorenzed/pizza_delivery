@@ -96,25 +96,33 @@
 
 	<!-- when check out is clicked -->
 
-	<div class='modal fade' id='proceed' tabindex='-1'>
+	<div class='modal fade' id='proceed' role='dialog' tabindex='-1'>
 		<div class='modal-dialog' role = 'document'>
 			<div class='modal-content'>
-				<div class='modal-body'>
+				<div class='modal-body' id="showRefno">
 					<?php 
 
 						// if user is logged in
 						if(isset($_SESSION['user'])){
 
-							echo "<p>".$_SESSION['firstName']." ".$_SESSION['lastName']."</p>";
-							echo "<input id='address' name='address' type='text' value='".$_SESSION['address']."'>";
-							if(isset($_SESSION['cart'])){
-												echo "<div>₱".$_SESSION['grandTotal']."</div>";
-											}
-											else {
-												echo "<div>₱0</div>";
-											}
+							if(isset($_SESSION['grandTotal']))
+							{
+								echo "<p>".$_SESSION['firstName']." ".$_SESSION['lastName']."</p>";
+								echo "<input id='address' name='address' type='text' value='".$_SESSION['address']."'>";
+								if(isset($_SESSION['cart'])){
+													echo "<div>₱".$_SESSION['grandTotal']."</div>";
+												}
+												else {
+													echo "<div>₱0</div>";
+												}
 
-							echo "<button class='m-auto btn btn2' type='button' data-dismiss='modal' onclick='checkOut()'>Proceed</button>";
+								echo "<button class='m-auto btn btn2' id='proceedButton' type='button' onclick='checkOut()'>Proceed</button>";
+							}
+							else
+							{
+								echo "You have no orders yet.";
+							}
+							
 						}
 						else
 						{ //if user is not logged in

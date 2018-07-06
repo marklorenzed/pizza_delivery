@@ -21,21 +21,19 @@
 	include "partials/header.php";
 ?>
 	<div class="container pt-5 pb-5">
-		<div class="row">
+		<div class="row" id="registerWrapper">
+
 			<div class="col-md-6 offset-md-3 col-12">
 
 				<h2>Account Registration</h2>
-				<form action="partials/registerUser.php" method="POST">
-					<?php 
-						if(isset($_SESSION['errorReg'])) { 
-							echo '<div id="loginerrorReg">'.$_SESSION['errorReg'].'</div>';
-							unset($_SESSION['errorReg']);
-						}
-					 ?>	
+				<div id="errorReg"></div>
+				<form>
+					
+					
 					<div class="md-form mb-4">
 						<i class="fa fa-user-o prefix grey-text"></i>
                     	<input type="text" id="usernameReg" name="username" class="form-control validate">
-                    	<label data-error="wrong" for="usernameReg">Username</label>
+                    	</span><label data-error="wrong" for="usernameReg">Username</label>
                 	</div>
 					<div class="md-form mb-4">
 						<i class="fa fa-sort-spoon prefix" aria-hidden="true"></i>
@@ -72,7 +70,7 @@
 	                </div>	
 	               
 	                <div class="modal-footer d-flex justify-content-center">
-                		<button type="submit" class="btn btn-deep-orange">Sign up</button>
+                		<button type="button" onclick='register()'class="btn btn-deep-orange">Sign up</button>
            			</div>
 
 					

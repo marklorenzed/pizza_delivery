@@ -38,6 +38,51 @@ function hideName(id){
 
 
 
+function register(){
+
+	var usernameReg = $("#usernameReg").val();
+	var firstNameReg = $("#firstNameReg").val();
+	var lastNameReg = $("#lastNameReg").val();
+	var lastNameReg = $("#lastNameReg").val();
+	var emailReg = $("#emailReg").val();
+	var addressReg = $("#addressReg").val();
+	var passReg = $("#passReg").val();
+	var cpassReg = $("#cpassReg").val();
+
+
+
+	$.ajax({
+		"url":"partials/registerUser.php",
+		"data": {"usernameReg":usernameReg,
+				 "firstNameReg":firstNameReg,
+				 "lastNameReg":lastNameReg,
+				 "emailReg":emailReg,
+				 "addressReg":addressReg,
+				 "passReg":passReg,
+				 "cpassReg":cpassReg,
+				},
+		"type": "POST",
+		"success": function(data){
+
+			var str = data;
+			var spaceChar = str.indexOf(" ");
+
+			var reqstr = str.substring(0,spaceChar);
+		
+			if(reqstr != "<div"){
+				$("#errorReg").html(data);
+			}
+			else
+			{	
+				$("#registerWrapper").html(data);
+				
+			}
+
+		}
+	});
+}
+
+
 
 
 function addToCart(id){
@@ -107,10 +152,9 @@ function checkOut(){
 		"url":"partials/checkOut.php",
 		"method": "POST",
 		"data":{"address": address},
-		"success":function(data){
-			$("#proceed").remove("hide"); 
-			$("#cart").html(data);
-			
+		"success":function(data){ 
+			$("#showRefno").html(data);
+
 		}
 	});
 }

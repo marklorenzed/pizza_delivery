@@ -1,4 +1,6 @@
-
+<?php 
+	session_start(); 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +14,7 @@
 </head>
 <body>
 <?php 
-	session_start();
+
 	include "partials/header.php";
 	include "partials/connect.php";
 
@@ -107,6 +109,7 @@
 
 									while($row2 = mysqli_fetch_assoc($result2)){
 										echo $row2['productName']." x ".$row2['quantityOrdered']."<br>";
+										echo $row2['orderDate'];
 									}
 
 
