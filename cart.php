@@ -14,6 +14,7 @@
 
 </head>
 <body>
+
 <div class="container" id="cart">
 
 
@@ -33,6 +34,11 @@
 	if(isset($_SESSION['cart']))
 	{
 		
+
+		if($_SESSION['grandTotal'] == 0){
+			echo "<h4 class='text-danger text-center'>No Item on the cart</h4>";
+		}
+
 		foreach ($_SESSION['cart'] as $id => $result2) 
 		{
 			
@@ -44,7 +50,7 @@
 						<td class='text-center'>
 							<button class= 'removeItem' data-toggle='modal'  data-target='#deleteCartItem".$result2['id']."'><i class='far fa-trash-alt'></i></button>
 
-							<button class='editCartButton'onclick='editCartQuantity(".$result2['id'].")'>Edit</button></td>
+							<button class='editButton'onclick='editCartQuantity(".$result2['id'].")'>Edit</button></td>
 					</tr>";
 			
 
@@ -103,20 +109,27 @@
 					<?php 
 
 						// if user is logged in
-						if(isset($_SESSION['user'])){
+						if(isset($_SESSION['user'])){ //if user is logged in
 
-							if(isset($_SESSION['grandTotal']))
+							if(isset($_SESSION['grandTotal'])) //if grand total is set
 							{
-								echo "<p>".$_SESSION['firstName']." ".$_SESSION['lastName']."</p>";
-								echo "<input id='address' name='address' type='text' value='".$_SESSION['address']."'>";
-								if(isset($_SESSION['cart'])){
-													echo "<div>₱".$_SESSION['grandTotal']."</div>";
-												}
-												else {
-													echo "<div>₱0</div>";
-												}
+								if($_SESSION['grandTotal'] == 0){ 
+								// if grandTotal isset, but quantity is edited to 0 or all item is deleted in cart
+									echo "You have no orders yet.";
+								}
+								else{ //else display proceed to checkout
+									echo "<p>".$_SESSION['firstName']." ".$_SESSION['lastName']."</p>";
+									echo "<input id='address' name='address' type='text' value='".$_SESSION['address']."'>";
+									if(isset($_SESSION['cart'])){
+														echo "<div>₱".$_SESSION['grandTotal']."</div>";
+													}
+													else {
+														echo "<div>₱0</div>";
+													}
 
-								echo "<button class='m-auto btn btn2' id='proceedButton' type='button' onclick='checkOut()'>Proceed</button>";
+									echo "<button class='m-auto btn btn2' id='proceedButton' type='button' onclick='checkOut()'>Proceed</button>";
+								}
+								
 							}
 							else
 							{

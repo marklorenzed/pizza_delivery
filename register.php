@@ -20,7 +20,7 @@
 <?php 
 	include "partials/header.php";
 ?>
-	<div class="container pt-5 pb-5">
+	<div class="container">
 		<div class="row" id="registerWrapper">
 
 			<div class="col-md-6 offset-md-3 col-12">

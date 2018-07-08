@@ -16,11 +16,12 @@
 		</button>
 
 		<div class="text-center">
-			<a href="orders.php">ORDER LIST</a>
+			<a href="orders.php"><h2>ORDER LIST</h2></a>
+		</div>
 		<div>
 		<?php 
 
-		if($_SESSION['role']== "admin"){
+		if($_SESSION['role'] == "admin"){
 			$sql = "SELECT*FROM products";
 			$result = mysqli_query($conn,$sql);
 
@@ -58,7 +59,7 @@
 					echo "<form action='partials/editItem.php' method='POST' class='modal fade' id='productEdit".$row['id']."' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true' enctype='multipart/form-data'>".
 						    "<div class='modal-dialog' role='document'>".
 						        "<div class='modal-content'>".
-						            "<div class='modal-header text-center'>".
+						            "<div class='modal-header'>".
 						                "<h4 class='modal-title w-100 font-weight-bold'>".$row['productName']."</h4>".
 						                "<button type='button' class='close' data-dismiss='modal' aria-label='Close'>".
 						                    "<span aria-hidden='true'>&times;</span>".
@@ -86,7 +87,7 @@
 					echo "<form action='partials/editItem.php' method='POST' class='modal fade' id='productDelete".$row['id']."' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>".
 						    "<div class='modal-dialog' role='document'>".
 						        "<div class='modal-content'>".
-						            "<div class='modal-header text-center'>".
+						            "<div class='modal-header'>".
 						                "<h4 class='modal-title w-100 font-weight-bold'>".$row['productName']."</h4>".
 						                "<button type='button' class='close' data-dismiss='modal' aria-label='Close'>".
 						                    "<span aria-hidden='true'>&times;</span>".
@@ -109,7 +110,7 @@
 			echo "</div>";
 
 		}else {
-			echo "<div>You are not authorized</div>";
+			echo "<h2>You are not authorized</h2>";
 		}
 
 

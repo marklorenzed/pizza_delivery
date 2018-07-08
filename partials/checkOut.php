@@ -22,7 +22,7 @@
 	}
 
 //this is where order is created
-	$sql1 = "INSERT INTO orders(customer_id,grandTotal,referenceNo,orderDate)VALUES('$userid',".$_SESSION['grandTotal'].",'$refno','$date')";
+	$sql1 = "INSERT INTO orders(customer_id,grandTotal,referenceNo,orderDate,status)VALUES('$userid',".$_SESSION['grandTotal'].",'$refno','$date','Processing')";
 	$result1 = mysqli_query($conn,$sql1) or die(mysqli_error($conn));
 
 //this is where rows with the order_id is selected
@@ -36,7 +36,7 @@
 	foreach ($_SESSION['cart'] as $id => $result2)
 	{
 		
-		$sql = "INSERT INTO orderdetails(product_id,order_id,quantityOrdered,subTotal)VALUES(".$result2['id']." , '$order_id' , ".$result2['qty'].",".$_SESSION['cart'][$id]['subtotal'].")";
+		$sql = "INSERT INTO orderdetails(product_id,order_id,quantityOrdered,subTotal, size)VALUES(".$result2['id']." , '$order_id' , ".$result2['qty'].",".$_SESSION['cart'][$id]['subtotal'].",'".$_SESSION['cart'][$id]['size']."')";
 		$result = mysqli_query($conn, $sql);
 		
 	}

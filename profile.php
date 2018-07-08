@@ -82,7 +82,10 @@
 									<th>No.</th>
 									<th>Reference Number</th>
 									<th>Details</th>
+									<th>Date</th>
+									<th>Status</th>
 									<th>Price</th>
+									<th>Action</th>
 									
 								</tr>
 				<?php 
@@ -108,16 +111,45 @@
 									//this is where all products are displayed with the same order number
 
 									while($row2 = mysqli_fetch_assoc($result2)){
-										echo $row2['productName']." x ".$row2['quantityOrdered']."<br>";
-										echo $row2['orderDate'];
+										echo $row2['productName']." ".$row2['size']." x ".$row2['quantityOrdered']."<br>";
+										
 									}
-
+									echo "<td>".$row['orderDate']."</td>";
 
 
 						echo		"</td>
+									<td>".$row['status']."</td>
 									<td>".$row['grandTotal']."</td>
+									<td>";
+
+									if($row['status'] == "Processing"){
+										echo "<button class='editButton' data-toggle='modal'  data-target='#deleteOrder".$row['id']."'>Cancel</button>";
+
+										echo "<div class='modal fade' id='deleteOrder".$row['id']."' tabindex='-1'>".
+		                                        "<div class='modal-dialog' role='document'>".
+		                                            "<div class='modal-content p-3'>".
+		                                                "<div class='modal-body'>".
+		                                                "<div class='row'>".
+		                                                	"<h4>Are you sure you want to cancel this order?</h4>".
+		                                                	"<br>".
+		                                                  	"<button class = 'm-auto btn btn2' onclick='deleteOrder(".$row['id'].")' '>Yes</button>".
+		                                                "</div>
+		                                            </div>
+		                                        </div>
+                                    		</div>" ; 
+									}
+									else
+									{
+										echo "<button disabled class='removeItem'>Cancel</button>";
+									}
+
+
+						echo		"</td>
+
 								</tr>";
 						$i++;
+
+
 					}
 
 				 ?>

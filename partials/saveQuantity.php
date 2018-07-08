@@ -9,6 +9,6 @@
 
 
 	$_SESSION['grandTotal'] = array_sum(array_column($_SESSION['cart'],'subtotal'));
-
+	$_SESSION['totalCartItem'] = array_sum(array_column($_SESSION['cart'],'qty'));
 
  ?>

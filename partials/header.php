@@ -33,8 +33,18 @@
 
 			<a class="brandLogo" href="index.php">Duma's</a>
 
-			<a class="shopIcon" href="products.php">Shop <i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
+			<a class="shopIcon" href="products.php">SHOP</a>
+			<?php 
+				
+				if(isset($_SESSION['role'])){
 
+					if($_SESSION['role'] == "admin"){
+						echo "<a class ='adminIcon' href='adminPage.php'>ADMIN PAGE<a>";
+					}
+
+				}
+				
+			 ?>
 			<a  class="cartBtnLogo" href="cart.php"><img class="cartIcon" src="assets/img/cart.svg"></a>
 			<div class="counterWrapper"> 
 				<div class="counter">
@@ -49,7 +59,7 @@
 
 			<?php  if(!isset($_SESSION['user'])){ ?>
 
-			<a href="" class="loginIcon" data-toggle="modal" data-target="#loginModal"><i class="far fa-user fa-2x"></i> </a>
+			<a href="" class="loginIcon" data-toggle="modal" data-target="#loginModal"><i class="far fa-user-circle fa-2x"></i></i> </a>
 			<span id="loginError"></span>
 			<!-- <a href="register.php" class="">Sign-Up</a> -->
 
@@ -58,7 +68,7 @@
 			<a id="navbarDropdownMenuLink" data-toggle="dropdown" class=" loginIcon nav-link dropdown-toggle"><?php echo $_SESSION['user'] ?></a>
 			
 			<div class="dropdown-menu dropdown-primary">
-				<a class="dropdown-item" href="profile.php">Acount</a>
+				<a class="dropdown-item" href="profile.php">Account</a>
 				<a class="dropdown-item" href="logout.php">Logout</a>
 					                    
 			</div>

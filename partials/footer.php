@@ -2,6 +2,7 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
 	<title></title>
 </head>
 <body>
@@ -9,9 +10,49 @@
 	mysqli_close($conn);
  ?>
  
-<footer class="col-12">
-	Made with love by Mark Dumalaon. All images are copyrighted by their respective owners
-</footer>
+
+<div  class="container-fluid footer p-4">
+	<div class="row pt-4">
+		<div class="col-12 col-lg-3 footerBrandColumn text-center">
+			<a class="footerBrand" href="index.php">Duma's</a>
+		</div>
+		<div class="col-12 col-lg-9">
+			<div class="row">
+				<div class="col-4">
+					<ul>
+						<li>CONTACT US:
+							<ul class="pt-3">
+								<li class="pFooter">dumashop25@gmail.com</li>
+								<li class="pFooter">+63-945-477-4960</li>
+							</ul>
+
+						</li>
+						
+					</ul>
+
+
+				</div>
+				
+				<div class="col-4">
+
+					<p>FOLLOW @DUMASHOP_PH</p>
+					<div>
+						<a class="socials" href="http://facebook.com/dumathegreat"><i class="fab fa-facebook-f fa-2x mr-4"></i></a>
+						<a class="socials" href="http://twitter.com/dumamon"><i class="fab fa-twitter fa-2x mr-4"></i></a>
+						<a class="socials" href="http://instagram.com/ml_duma"><i class="fab fa-instagram fa-2x mr-4"></i></a>
+					</div>
+					
+
+				</div>
+				<div class="col-4">
+					<p>DISCLAIMER:</p>
+					<p class="text-justify pFooter">No copyright infringement is intended. This is only for educational purposes and not for profit. Some asset/s used are not owned by the developer unless otherwise stated. The credit goes to the owner.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 
 	<script
 	  src="https://code.jquery.com/jquery-3.3.1.min.js"

@@ -1,5 +1,6 @@
+checkCategory(0);
 
-$('.backtotop').click(function(e){
+$('.backtotop').click(function (e){
 
 	var linkHref = $(this).attr('href');
 
@@ -88,17 +89,29 @@ function register(){
 function addToCart(id){
 	
 	var quantity = $("#quantity"+id).val();
-
-	$.ajax({
+	var size = $("#size"+id+" option:selected").text();
+    if (quantity > 0){
+         $.ajax({
 		"url":"partials/addToCart.php",
-		"data": {"quantity":quantity, "id":id},
+		"data": {"quantity":quantity, 
+				"id":id,
+				"size": size,
+				},
 		//throws to addToCart.php the ID of item selected as well as the quantity
 		"type": "POST",
 		"success": function(data){
 			location.reload();
+			// alert(data);
 			
-		}
-	});
+		  }
+	   });
+        
+    }
+    else
+    {
+       $(".quantityError").html("*Please input quantity");
+    }
+	
 
 }
 
@@ -269,4 +282,43 @@ function saveQuantity(id){
 			location.reload();
 		}
 	})
+}
+
+function orderStatusUpdate(id){
+	var status = $("#status"+id).text();
+	$.ajax({
+		"url":"partials/editOrderStatusColumn.php",
+		"method": "GET",
+		"data":{"status": status,
+				"id":id},
+		"success":function(data){
+			$("#status"+id).html(data);
+		}
+	});
+}
+function saveOrderStatus(id){
+	var newStatus = "Shipped";
+
+	$.ajax({
+		"url":"partials/saveOrderStatus.php",
+		"method": "GET",
+		"data":{"newStatus":newStatus ,"id":id},
+		"success":function(data){
+			location.reload();
+			// alert(data);
+		}
+	})
+}
+
+function deleteOrder(id){
+	$.ajax({
+		"url":"partials/deleteOrder.php",
+		"method": "GET",
+		"data":{"id":id},
+		"success":function(data){
+			location.reload();
+			// alert(data);
+		}
+	})
+
 }

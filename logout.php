@@ -20,8 +20,9 @@
 	include_once "partials/header.php";
 ?>
 	<div class="container">
-		<div class="jumbotron mt-5">
-			<h2>You have logged out successfuly</h2>
+		<div class="jumbotron mt-5 text-center">
+			<h2>You have logged out successfully</h2>
+			<a href="index.php"><button class="btn btn2 mt-5">Home</button></a>
 		</div>
 	</div>
 
