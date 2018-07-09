@@ -111,6 +111,8 @@
 
 		}else {
 			echo "<h2>You are not authorized</h2>";
+			echo "</div>";
+		
 		}
 
 
@@ -144,13 +146,13 @@
 	                	<br>
 	                	Description: <input type="text" name="description" class="form-control"><br>
 	                	Image: <input type="file" name="itemImg" class="form-control"><br>
-	                	<button type="submit">Save new item </button>
+	                	<button type="submit" class="btn btn2">Save new item </button>
 	                	
 	                </form>	
 	            </div>
 	            <div class="modal-footer">
-	                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-	                <button type="submit" class="btn btn-primary">Save changes</button>
+	                <button type="button" class="btn btn1" data-dismiss="modal">Close</button>
+	                <button type="submit" class="btn btn2">Save changes</button>
 	            </div>
 	        </div>
 	    </div>

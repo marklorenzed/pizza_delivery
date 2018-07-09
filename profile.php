@@ -11,6 +11,7 @@
 	<!-- external stylesheet -->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
+
 </head>
 <body>
 <?php 
@@ -97,7 +98,7 @@
 					// loop to show all selected orders from  the user logged in
 					while($row = mysqli_fetch_assoc($result)){
 						$id = $row['id'];
-
+						
 						//select all rows from orderdetails-orders-products with same order id
 						$sql2 = "SELECT * FROM orderdetails JOIN orders JOIN products ON(orderdetails.order_id = orders.id AND orderdetails.product_id = products.id) WHERE order_id = '$id'";
 						$result2 = mysqli_query($conn, $sql2);
@@ -118,12 +119,22 @@
 
 
 						echo		"</td>
-									<td>".$row['status']."</td>
+									<td>";
+									if($row['status'] == "Shipped"){
+										echo "<div class='shipped'>Shipped</div>";
+									}
+									else{
+										echo "<div class='processing'>Processing</div>";
+									}
+						echo		"</td>
 									<td>".$row['grandTotal']."</td>
 									<td>";
+						
+
+									;
 
 									if($row['status'] == "Processing"){
-										echo "<button class='editButton' data-toggle='modal'  data-target='#deleteOrder".$row['id']."'>Cancel</button>";
+										echo "<button class='btn4' data-toggle='modal'  data-target='#deleteOrder".$row['id']."'>Cancel</button>";
 
 										echo "<div class='modal fade' id='deleteOrder".$row['id']."' tabindex='-1'>".
 		                                        "<div class='modal-dialog' role='document'>".
@@ -137,19 +148,22 @@
 		                                            </div>
 		                                        </div>
                                     		</div>" ; 
+
 									}
 									else
 									{
-										echo "<button disabled class='removeItem'>Cancel</button>";
+										echo "<button disabled class='btn5'>Cancel</button>";
 									}
 
 
 						echo		"</td>
 
 								</tr>";
+						
+
+						
+						
 						$i++;
-
-
 					}
 
 				 ?>

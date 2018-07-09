@@ -21,7 +21,7 @@
 		$refno = strtoupper(uniqid());
 	}
 
-//this is where order is created
+// this is where order is created
 	$sql1 = "INSERT INTO orders(customer_id,grandTotal,referenceNo,orderDate,status)VALUES('$userid',".$_SESSION['grandTotal'].",'$refno','$date','Processing')";
 	$result1 = mysqli_query($conn,$sql1) or die(mysqli_error($conn));
 
@@ -63,11 +63,16 @@
 
 	echo $showRefNo;
 
+
+
+	include "../email_sending.php";
 	
 //this will empty the cart after checkout
 	unset($_SESSION['cart']);
 	unset($_SESSION['totalCartItem']);
 	unset($_SESSION['grandTotal']);
+
+
 
 	mysqli_close($conn);
 

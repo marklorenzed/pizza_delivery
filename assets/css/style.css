@@ -6,9 +6,6 @@ Global styles
 	margin:0;
 }
 
-
-
-
 .container {
 	min-height: 85vh;
 	padding: 0;
@@ -20,8 +17,10 @@ Global styles
 }
 .container_admin{
 	min-height: 83vh;
-	margin: 20px auto;
-	padding: 10px;
+	
+	padding-top: 120px;
+	padding-left: 10px;
+	padding-right: 10px;
 	/*border: 0px solid black;
 	box-shadow: 0 1px 5px 0px black*/
 }
@@ -47,6 +46,31 @@ a {
 .hidden {
 	visibility: hidden;
 }
+
+.btn4 {
+	background-color: #ff3333;
+	color: #eee;
+	width: 80px;
+	height: 30px;
+	border-radius: 30px;
+	border: none;
+}
+.btn5 {
+	background-color: #gray;
+	color: #eee;
+	width: 80px;
+	height: 30px;
+	border-radius: 30px;
+	border: none;
+}
+
+.shipped {
+	color: green;
+}
+.processing {
+	color: orange;
+}
+
 /*================================================
 Header styles
 =================================================*/
@@ -54,7 +78,7 @@ Header styles
 	height: 100px;
 	width: 100%;
 	position: relative;
-
+	z-index: 3;
 }
 #top {
 	position: fixed;
@@ -136,6 +160,9 @@ Header styles
 	text-align: center;
 	color: #2c2c2c;
 	visibility: visible;
+}
+.dropdown-menu{
+	z-index: 3;
 }
 
 /*==================================================
@@ -258,7 +285,7 @@ input[class*='quantityInput'] {
 .container-fluid .categoriesWrapper{
 	position: fixed;
 	width: 100%;
-	z-index: 2;
+	z-index: 1;
 
 }
 /*=====================================
@@ -382,8 +409,11 @@ td[class*='text-center']{
 	border-radius: 30px;
 	border: none;
 }
-
-
+#address {
+	width: 100%;
+	border-radius: 5px;
+	border: 1px solid gray;
+}
 /*==================================================
 FOOTER STYLES
 ===================================================*/
@@ -423,6 +453,7 @@ FOOTER STYLES
 .socials:hover {
 	color: #ffb3b3;
 }
+
 
 
 

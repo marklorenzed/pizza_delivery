@@ -100,9 +100,10 @@ function addToCart(id){
 		//throws to addToCart.php the ID of item selected as well as the quantity
 		"type": "POST",
 		"success": function(data){
-			location.reload();
+			// location.reload();
+			$("#body"+id).html(data);
 			// alert(data);
-			
+			$("#showRefno").html(data);
 		  }
 	   });
         
@@ -167,6 +168,7 @@ function checkOut(){
 		"data":{"address": address},
 		"success":function(data){ 
 			$("#showRefno").html(data);
+			// alert(data);
 
 		}
 	});

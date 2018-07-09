@@ -106,6 +106,8 @@
 		<div class='modal-dialog' role = 'document'>
 			<div class='modal-content'>
 				<div class='modal-body' id="showRefno">
+					<h2 class="text-center">Cart Checkout</h2>
+					<hr>
 					<?php 
 
 						// if user is logged in
@@ -118,16 +120,19 @@
 									echo "You have no orders yet.";
 								}
 								else{ //else display proceed to checkout
-									echo "<p>".$_SESSION['firstName']." ".$_SESSION['lastName']."</p>";
-									echo "<input id='address' name='address' type='text' value='".$_SESSION['address']."'>";
-									if(isset($_SESSION['cart'])){
-														echo "<div>₱".$_SESSION['grandTotal']."</div>";
-													}
-													else {
-														echo "<div>₱0</div>";
-													}
+									echo "<h6>Customer Name:</h6>
 
-									echo "<button class='m-auto btn btn2' id='proceedButton' type='button' onclick='checkOut()'>Proceed</button>";
+											<h4>".$_SESSION['firstName']." ".$_SESSION['lastName']."</h4>";
+									echo "<h6>Address</h6>
+										  <input class='m-auto' id='address' name='address' type='text' value='".$_SESSION['address']."'>";
+									
+									echo "<div>
+											<h5 class= mt-3>Grand Total:</h5>
+											<h4>₱".$_SESSION['grandTotal']."</h4>
+										 </div>";
+									
+
+									echo "<button class='btn btn2' id='proceedButton' type='button' onclick='checkOut()'>Proceed</button>";
 								}
 								
 							}

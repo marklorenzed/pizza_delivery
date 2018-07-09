@@ -69,6 +69,18 @@
 	// }
 
 
-	echo $_SESSION['totalCartItem'];
+	// echo $_SESSION['totalCartItem'];
+
+	$message = "<div class='row'>
+					<div class='col-12 text-center'>
+						<h3>Successfully added to cart!</h3>
+						<a href='cart.php'>
+							<button class='btn btn2'>View Cart</button>
+						</a>
+					</div>
+				  </div>	
+
+				";
+	echo $message;
 	
  ?>
