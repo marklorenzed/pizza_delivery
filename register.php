@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Duma's | Registration</title>
 
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 <!-- contains

@@ -22,7 +22,7 @@ $mail_body = "<p>Your order has been received and is being processed.</p>
 $mail = new PHPMailer(true);
 try {
 	// Settings
-	$mail->SMTPDebug = 4; //level of debug messaging 4 is lowest, 1 is highest
+	// $mail->SMTPDebug = 4; //level of debug messaging 4 is lowest, 1 is highest
 	$mail->isSMTP(); //make sures to use SMTP to mail. (Simple Mail Transfer Protocol)
 	$mail->SMTPOptions = array( //custom connection options 
 		'ssl' => array(

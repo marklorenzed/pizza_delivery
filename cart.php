@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Duma's | Cart</title>
 
 	<!-- bootstrap -->
 	<!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css"> -->
@@ -19,10 +19,19 @@
 
 
 
+	<div class="row">
+		<div class="col-12">
+			<h1></h1>
+		</div>
+		
+	</div>
+
 
 	<table class='table'>
 					<tr>
-						<th>Item Name</th>
+						<th>Pizza Type</th>
+						<th>Size</th>
+						<th>Crust</th>
 						<th>Quantity</th>
 						<th>Price</th>
 						<th>Subtotal</th>
@@ -43,7 +52,9 @@
 		{
 			
 			echo "	<tr>
-						<td>".$result2['productName']."</td>
+						<td>".$result2['name']."</td>
+						<td>".$result2['size']."</td>
+						<td>".$result2['crust']."</td>
 						<td id='cartQuantity".$result2['id']."'>".$result2['qty']."<span id='saveQuantity".$result2['id']."'></span></td>
 						<td>".$result2['price']."</td>
 						<td>".$result2['subtotal']."</td>	
@@ -82,6 +93,8 @@
 	 <tr>
 			<td></td>	
 			<td></td>	
+			<td></td>	
+			<td></td>	
 			<td>Grand Total: </td>	
 			<td><?php 
 				if(isset($_SESSION['cart'])){
@@ -96,7 +109,8 @@
 		</tr>
 	</table>
 
-	<button class="btn btn2" data-toggle='modal'  data-target='#proceed' >Check Out</button>	
+	<button class="btn btn2 orange darken-1" data-toggle='modal'  data-target='#proceed' >Check Out</button>	
+	<button class="btn btn2 red darken-4 " data-toggle='modal'  data-target='#emptyCart' >Empty Cart</button>	
 
 
 
@@ -132,7 +146,7 @@
 										 </div>";
 									
 
-									echo "<button class='btn btn2' id='proceedButton' type='button' onclick='checkOut()'>Proceed</button>";
+									echo "<button class='btn btn2 orange darken-1' id='proceedButton' type='button' onclick='checkOut()'>Proceed</button>";
 								}
 								
 							}
@@ -171,6 +185,26 @@
 					 ?>
 
 					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- empty cart modal -->
+	<div class='modal fade' id='emptyCart' role='dialog' tabindex='-1'>
+		<div class='modal-dialog' role = 'document'>
+			<div class='modal-content'>
+				<div class='modal-body'>
+					<?php 
+					if(isset($_SESSION['cart'])){
+					 	echo "<h4>Do you want to empty your cart?</h4>
+					 	<button class='btn btn1 btn-orange darken-1' onclick='emptyCart()'>YES</button>
+					 	<button data-dismiss='modal' class='btn btn1'>NO</button>";
+					}
+					else 
+					{
+						echo "Your Cart is Empty.";
+					}
+					 ?>
 				</div>
 			</div>
 		</div>

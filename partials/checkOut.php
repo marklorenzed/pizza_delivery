@@ -61,20 +61,20 @@
 
 				";
 
-	echo $showRefNo;
 
-
-
-	include "../email_sending.php";
+	
 	
 //this will empty the cart after checkout
 	unset($_SESSION['cart']);
 	unset($_SESSION['totalCartItem']);
 	unset($_SESSION['grandTotal']);
 
+	
+	echo $showRefNo;
+
 
 
 	mysqli_close($conn);
-
+	include "../email_sending.php";
  ?>
 

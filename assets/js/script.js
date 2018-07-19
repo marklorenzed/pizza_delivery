@@ -1,4 +1,3 @@
-checkCategory(0);
 
 $('.backtotop').click(function (e){
 
@@ -9,7 +8,8 @@ $('.backtotop').click(function (e){
 	},800);
 
 	e.preventDefault();
-})
+});
+
 
 var cartCounter = $(".counter").text();
 
@@ -26,14 +26,18 @@ function showName(id){
     	$("#productName"+id).css("visibility", "visible");
     	$("#product"+id).css("background-color","black");
     	$("#productImg"+id).css("opacity","0.3");
-    	$("#product"+id).css("transition","0.3s");
+    	$("#product"+id).css("border-radius","20px");
+    	$("#product"+id).css("transition","0.3s ease all");
 
     }
 function hideName(id){
 
     	$("#productName"+id).css("visibility", "hidden");
     	$("#product"+id).css("background-color","#eee");
-    	$("#productImg"+id).css("opacity","1");   	
+    	$("#product"+id).css("border-radius","20px");
+    	$("#productImg"+id).css("opacity","1");  
+
+
     }
 
 
@@ -90,30 +94,34 @@ function addToCart(id){
 	
 	var quantity = $("#quantity"+id).val();
 	var size = $("#size"+id+" option:selected").text();
+	var crust = $("#crust"+id+" option:selected").text();
     if (quantity > 0){
          $.ajax({
 		"url":"partials/addToCart.php",
 		"data": {"quantity":quantity, 
 				"id":id,
 				"size": size,
+				"crust":crust
 				},
 		//throws to addToCart.php the ID of item selected as well as the quantity
 		"type": "POST",
 		"success": function(data){
 			// location.reload();
-			$("#body"+id).html(data);
-			// alert(data);
-			$("#showRefno").html(data);
+		
+			var obj = JSON.parse(data);
+
+			$("#body"+id).html(obj.message);
+
+			$(".counter").html(obj.totalQty);
+			
 		  }
 	   });
-        
+      	  
     }
     else
     {
        $(".quantityError").html("*Please input quantity");
     }
-	
-
 }
 
 function deleteItem(id){
@@ -153,6 +161,7 @@ function checkCategory(i){
 		     $("#product_loading").html(data);
 		     $("#"+i).addClass('underline');
 		     $("#"+i).siblings().removeClass('underline'); 
+
 			}  
 	});
 
@@ -167,6 +176,7 @@ function checkOut(){
 		"method": "POST",
 		"data":{"address": address},
 		"success":function(data){ 
+
 			$("#showRefno").html(data);
 			// alert(data);
 
@@ -299,8 +309,8 @@ function orderStatusUpdate(id){
 	});
 }
 function saveOrderStatus(id){
-	var newStatus = "Shipped";
-
+	var newStatus = $("#orderUpdate"+id+" option:selected").text();
+	// alert(newStatus);
 	$.ajax({
 		"url":"partials/saveOrderStatus.php",
 		"method": "GET",
@@ -323,4 +333,42 @@ function deleteOrder(id){
 		}
 	})
 
+}
+
+function emptyCart(){
+	$.ajax({
+		"url":"partials/emptyCart.php",
+		"success":function(data){
+			location.reload();
+		}
+	});
+}
+
+$(document).ready( function() {
+
+	$(window).scroll(function(){
+		if($(window).scrollTop() >= 100){
+
+			$('.head').addClass('scrolled');
+			$('.backtotop').addClass('scrolled');
+			$(".categoriesWrapper").css("margin-top", "50px");
+		}
+		else
+		{
+			$('.head').removeClass('scrolled');
+			$('.backtotop').removeClass('scrolled');
+			$(".categoriesWrapper").css("margin-top", "100px");
+		}
+
+	});
+
+
+
+});
+
+function redirect(category){
+	var category = category;
+
+	location.replace("index.php");
+	
 }

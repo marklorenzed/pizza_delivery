@@ -6,10 +6,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Duma's | Order List</title>
 </head>
 <body>
-	<div class="container">
+	<div class="container_admin">
         
         <div class="text-center">
             <a href="adminPage.php"><h2>ITEM LIST</h2></a>

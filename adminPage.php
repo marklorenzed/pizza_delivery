@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Duma's | Admin Page</title>
 </head>
 <body>
 
@@ -94,11 +94,16 @@
 						                "</button>".
 						            "</div>".
 						            "<div class='modal-body '>".
-						                "<form enctype='multipart/form-data' class=' m-auto'>".
-						                	"Are you sure you want to delete this item?<br>" .
-							            	 "<button type = 'submit' class = 'btn btn1' onclick = 'deleteItem(".$row['id'].")'>".
+						                "<form enctype='multipart/form-data' class='m-auto'>".
+						                	"<h4 class='text-center'>Are you sure you want to delete this item?</h4><br>" .
+						                	"<div class='text-center'>".
+							            	 "<button type = 'submit' class = 'btn btn2' onclick = 'deleteItem(".$row['id'].")'>".
 						                		"Yes".
 						                	 "</button>".
+						                	 "<button data-dismiss='modal' type = 'submit' class = 'btn btn1'>".
+						                		"No".
+						                	 "</button>".
+						                	 "</div>".
 						            	"</form>".
 
 						            "</div>
@@ -128,7 +133,6 @@
 
 	<!-- Add Item Modal -->
 
-	<!-- Modal -->
 	<div class="modal right fade" id="additem" tabindex="-1">
 	    <div class="modal-dialog modal-full-height modal-right" role="document">
 	        <div class="modal-content">
@@ -141,19 +145,23 @@
 	            <div class="modal-body">
 	                <form action="partials/addNewItem.php" method="POST" enctype="multipart/form-data">
 	                	Item Name: <input type="text" name="itemName" class="form-control"><br>
-	                	Category: <input type="number" name="category" class="form-control"><br>
+	                	Category: <br>
+                                <select name='category'>
+                                    <option value='Dress Shoes'>Dress Shoes</option> 
+                                    <option value='Casual Shoes'>Casual Shoes</option> 
+                                    <option value='Bags'>Bags</option> 
+                                </select>
+                        <br>
+                        
 	                	Price: <input type="number" name="price" class="form-control"><br>
 	                	<br>
 	                	Description: <input type="text" name="description" class="form-control"><br>
 	                	Image: <input type="file" name="itemImg" class="form-control"><br>
 	                	<button type="submit" class="btn btn2">Save new item </button>
-	                	
+	                	<button type="button" class="btn btn1" data-dismiss="modal">Close</button>
 	                </form>	
 	            </div>
-	            <div class="modal-footer">
-	                <button type="button" class="btn btn1" data-dismiss="modal">Close</button>
-	                <button type="submit" class="btn btn2">Save changes</button>
-	            </div>
+	     
 	        </div>
 	    </div>
 	</div>

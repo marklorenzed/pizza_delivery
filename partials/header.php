@@ -14,7 +14,7 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
 	
 	<!-- google fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Bree+Serif|Galada|Hind+Siliguri:700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Bree+Serif|Galada|Hind+Siliguri:700|Oswald|Open+Sans+Condensed:300|PT+Sans+Narrow|Cinzel" rel="stylesheet">
 
 </head>
 <body>
@@ -28,12 +28,15 @@
  ?>
 
 
-<header class="container-fluid p-0" id="top">
+
+<header class="container-fluid p-0" id="topscroll">
 	<div class="head">
 
-			<a class="brandLogo" href="index.php">Duma's</a>
+	<a href="#topscroll" class="backtotop"><i class="fa fa-angle-up"></i></a>
 
-			<a class="shopIcon" href="products.php">SHOP</a>
+			<a class="brandLogo" href="index.php">Pizza Delivery</a>
+
+			
 			<?php 
 				
 				if(isset($_SESSION['role'])){
@@ -75,6 +78,9 @@
 		
 			<?php  } ?>
 	</div>
+
+
+
 </header>
 
 

@@ -5,25 +5,23 @@
 
 	$quantity = htmlspecialchars($_POST['quantity']);
 	$id = $_POST['id'];
-	$size = $_POST['size'];
+	$size = htmlspecialchars($_POST['size']);
+	$crust = $_POST['crust'];
 
-
-
-	if($_POST['size'] == "none"){
-		$size = " ";
-	}
-	else{
-		$size = "size " .$_POST['size'];
-	}
-	
 	
 
-
-	$sql = "SELECT * FROM products WHERE id = $id";
+	$sql = "SELECT * FROM pizza_types WHERE id = $id";
 	
 	$result = mysqli_query($conn, $sql);
 	$result2 = mysqli_fetch_assoc($result);
+	$price = $result2['price'];
 
+	if($size == "10 inches"){
+		$price = $price + 140;
+	}
+	else if ($size == "14 inches") {
+		$price = $price + 370;
+	}
 
 	if(isset($_SESSION['cart']) && array_key_exists($id,$_SESSION['cart'])){
 		$currentQuantity = $_SESSION['cart'][$id]['qty'];
@@ -34,10 +32,12 @@
 		$_SESSION['cart'][$id]['qty'] = $quantity;
 		$_SESSION['cart'][$id]['img_path'] = $result2['img_path'];
 		$_SESSION['cart'][$id]['id'] = $result2['id'];
-		$_SESSION['cart'][$id]['productName'] = $result2['productName']." ".$size;
-		$_SESSION['cart'][$id]['price'] = $result2['price'];
-		$_SESSION['cart'][$id]['subtotal'] = ($quantity * $result2['price']);
+		$_SESSION['cart'][$id]['name'] = $result2['name'];
+		$_SESSION['cart'][$id]['price'] = $price;
+		$_SESSION['cart'][$id]['subtotal'] = ($quantity * $price);
 		$_SESSION['cart'][$id]['size'] = $size;
+		$_SESSION['cart'][$id]['crust'] = $crust;
+
 		
 	}
 
@@ -77,10 +77,14 @@
 						<a href='cart.php'>
 							<button class='btn btn2'>View Cart</button>
 						</a>
+						<button class='btn btn1' data-dismiss='modal'> Shop more </button>
 					</div>
-				  </div>	
+				  </div>";
 
-				";
-	echo $message;
+
+	$array = ["message" => $message, "totalQty" => $_SESSION['totalCartItem']];		  
+
+	echo json_encode($array);
+
 	
  ?>

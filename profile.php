@@ -4,10 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Duma's | Profile</title>
 
-	<!-- bootstrap -->
-	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
 	<!-- external stylesheet -->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
@@ -39,28 +38,28 @@
 				<div class="row profileContent">
 					<?php 
 					
-					echo "<div class='col-2'>
+					echo "<div class='col-3'>
 							First Name: 
 						  </div>".
-						 "<div class='col-10'>".
+						 "<div class='col-9'>".
 							 $_SESSION['firstName'].
 						  "</div>";
-					echo "<div class='col-2'>
+					echo "<div class='col-3'>
 							Last Name: 
 						  </div>".
-						 "<div class='col-10'>".
+						 "<div class='col-9'>".
 							 $_SESSION['lastName'].
 						  "</div>";
-					echo "<div class='col-2'>
+					echo "<div class='col-3'>
 							Email: 
 						  </div>".
-						 "<div class='col-10'>".
+						 "<div class='col-9'>".
 							 $_SESSION['email'].
 						  "</div>";	 	  
-					echo "<div class='col-2'>
+					echo "<div class='col-3'>
 							Address: 
 						  </div>".
-						 "<div class='col-10'>".
+						 "<div class='col-9'>".
 							 $_SESSION['address'].
 						  "</div>";	  
 				 	?>

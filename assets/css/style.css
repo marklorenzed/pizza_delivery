@@ -4,6 +4,7 @@ Global styles
 * {
 	padding: 0;
 	margin:0;
+	font-family: 'PT Sans Narrow', sans-serif;
 }
 
 .container {
@@ -11,13 +12,13 @@ Global styles
 	padding: 0;
 	padding-top: 120px;
 	z-index: 1;
+	
 }
 .container-fluid{
 	padding-top: 100px;
 }
 .container_admin{
 	min-height: 83vh;
-	
 	padding-top: 120px;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -50,25 +51,72 @@ a {
 .btn4 {
 	background-color: #ff3333;
 	color: #eee;
-	width: 80px;
-	height: 30px;
+	width: 100px;
+	height: 50px;
 	border-radius: 30px;
 	border: none;
 }
 .btn5 {
 	background-color: #gray;
 	color: #eee;
-	width: 80px;
-	height: 30px;
+	width: 100px;
+	height: 50px;
 	border-radius: 30px;
 	border: none;
 }
 
 .shipped {
 	color: green;
+	font-size: 20px;
 }
 .processing {
 	color: orange;
+	font-size: 20px;	
+}
+.profileContent {
+	font-size: 30px;
+}
+
+/*================================================
+Index styles
+=================================================*/
+.featuredImage {
+	width: 100%;
+	height: 90%;
+	border-radius: 20px;
+
+}
+.modelImage {
+	width: 100%;
+	height: 100%;
+	border-radius: 20px;
+}
+.title{
+	height: 20%;
+}
+.featuredTitle{
+	font-size: 80px;
+
+}
+.featuredContent{
+	height: 80%;
+	position: relative;
+}
+.featuredContentWrapper{
+	position: absolute;
+	bottom: 0;
+}
+
+.featured{
+	height: 600px;
+	margin-bottom: 50px;
+}
+
+.productWrapper {
+	border: 1px solid black;
+	height: 300px;
+	padding: 0 20px 0 0;
+	margin-bottom: 20px;
 }
 
 /*================================================
@@ -77,14 +125,16 @@ Header styles
 .head {
 	height: 100px;
 	width: 100%;
+	background-color: white;
 	position: relative;
 	z-index: 3;
-}
-#top {
 	position: fixed;
-	background-color: #eee;
-	z-index: 2;
+	transition: 0.35s ease all;
+}
 
+.scrolled{
+	height: 50px;
+	transition: 0.35s all ease;		
 }
 
 .cartBtnLogo{
@@ -97,6 +147,17 @@ Header styles
 .cartIcon{
 	height: 30px;
 }
+.scrolled .cartIcon{
+	visibility: hidden;	
+}
+.brandIcon{
+	height: 80px;
+	transition: 0.35s ease all;
+}
+.scrolled .brandIcon {
+	height: 50px;
+	transition: 0.35s ease all;
+}
 
 .brandLogo {
 	font-size: 40px;
@@ -104,12 +165,12 @@ Header styles
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%,-50%);
-	font-family: 'Galada', cursive;
+	font-family: 'Cinzel', serif;
 	color: #383838;
 }
-.brandLogo:hover{
-	color: #003049;
-	font-size: 45px;
+
+.scrolled .brandLogo {
+		font-size: 40px;
 }
 
 .loginIcon{
@@ -120,6 +181,9 @@ Header styles
 	transform: translateY(-50%);
 	color: #383838;
 }
+.scrolled .loginIcon{
+	visibility: hidden;	
+}
 .shopIcon{
 	position: absolute;
 	left: 30px;
@@ -127,8 +191,12 @@ Header styles
 	transform: translateY(-50%);
 	font-size: 20px;
 	color: #383838;
-	font-family: 'Hind Siliguri', sans-serif;
+	  
 }
+.scrolled .shopIcon{
+	visibility: hidden;
+}
+
 .adminIcon{
 	position: absolute;
 	left: 120px;
@@ -150,17 +218,27 @@ Header styles
 }
 
 .counterWrapper{
-	width: 20px;
-	height: 20px;
+	width: 30px;
+	height: 30px;
 	background-color: #ff3333;
 	border-radius: 100%;
 	position: absolute;
-	right: 20px;
-	top: 30px;
+	right: 15px;
+	top: 20px;
 	text-align: center;
-	color: #2c2c2c;
+	color: #eee;
 	visibility: visible;
 }
+.scrolled .counterWrapper{
+	visibility: hidden;	
+}
+.counter {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+
 .dropdown-menu{
 	z-index: 3;
 }
@@ -172,6 +250,7 @@ img[class*=productImg] {
 	margin: 5px;
 	width: 100%;
 	height: 300px;
+	border-radius: 20px;
 }
 
 .landingPage {
@@ -187,7 +266,7 @@ img[class*=productImg] {
 	width: 100%;
 }
 .productPrice {
-	
+	margin:0;
 	font-family: 'Montserrat', sans-serif;
 }
 .productName {
@@ -197,7 +276,7 @@ img[class*=productImg] {
 	transform: translateX(-50%);
 	font-size: 20px;
 	visibility: hidden;
-	font-family: 'Roboto Slab', serif;
+	font-family: 'Oswald', sans-serif;
 	color: white;
 	text-transform: uppercase;
 	text-align: center;
@@ -208,6 +287,8 @@ img[class*=productImg] {
 }
 .productWrapper {
 	height: 400px;
+	padding: 0 20px 0 0;
+	margin-bottom: 20px;
 }
 .productName2 {
 	font-size: 20px;
@@ -230,7 +311,7 @@ button[class*=btn3] {
 }
 
 .backtotop {
-	background-color: #1c1c1c;
+	background-color: #A1B5D8;
 	border-radius: 30px;
 	border: none;
 	width: 70px;
@@ -241,10 +322,16 @@ button[class*=btn3] {
 	bottom: 20px;
 	right: 20px;
 	position: fixed;
-	box-shadow: 0 1px 5px 0px black
+	opacity: 0;
+	box-shadow: 0 1px 5px 0px black;
+
+}
+.scrolled .backtotop{
+	opacity: 1;
+	transition: 0.35s ease all;
 }
 .backtotop:hover {
-	background-color: #0c0c0c;
+	background-color: #7e91b2;
 	color: #eee;
 }
 .fa-angle-up {
@@ -255,14 +342,15 @@ button[class*=btn3] {
 }
 
 .categories {
-	font-family: 'Hind Siliguri', sans-serif;
+		font-family: 'Oswald', sans-serif;
 	text-align: center;
 	position: relative;
+	top: 5px;
 }
 
 .underline {
-	border-bottom: 5px solid #93A5C5;
 	color: #eee;
+	transition: 0.35s ease all;
 }
 input[class*='quantityInput'] {
     width: 60px;
@@ -280,13 +368,21 @@ input[class*='quantityInput'] {
 
 .categoriesWrapper{
 	background-color: #A1B5D8;
-
-}
-.container-fluid .categoriesWrapper{
 	position: fixed;
-	width: 100%;
+	margin-top: 100px;
+	width: 80%;
+	left: 50%;
+	transform: translateX(-50%);
 	z-index: 1;
-
+	margin-right: 0;
+	margin-left: 0;
+	transition: 0.35s ease all;
+	margin-bottom: 100px;
+	min-height: 30px;
+	border-radius: 30px;
+}
+#product_loading {
+	margin-top: 100px;
 }
 /*=====================================
 Admin Page
@@ -317,7 +413,7 @@ Admin Page
 }
 .product_admin div[class*=row] div[class*=col-5] button[class*=btn2]{
 	border-radius: 50px;
-	background-color: indianred;
+	background-color: #c62828;
 	color: white;
 
 }
@@ -329,13 +425,13 @@ Admin Page
 .editBtn{
 	background-color: #e53935;
 	border-radius: 100%;
-	height: 60px;
-	width: 60px;
+	height: 50px;
+	width: 50px;
 	border: 1px solid #e53935;
 	color: white;
 	position:absolute;
 	right: 20px;
-	bottom: 50px;
+	top: 120px;
 	position: fixed;
 	box-shadow: 2px 2px 3px 0 gray;
 	z-index: 1000;
@@ -368,7 +464,7 @@ CART STYLES
 
 button[class*= btn2] {
 	border-radius: 50px;
-	background-color: indianred;
+	background-color: #c62828;
 	color: white;
 }
 
@@ -413,6 +509,16 @@ td[class*='text-center']{
 	width: 100%;
 	border-radius: 5px;
 	border: 1px solid gray;
+}
+
+table th {
+	font-size: 30px;
+}
+table td {
+	font-size: 20px;
+}
+.container h4 {
+	font-size: 50px;
 }
 /*==================================================
 FOOTER STYLES
@@ -490,9 +596,9 @@ FOOTER STYLES
 	position: relative;
 	top: -30px;
 	left: 5%;
-	font-size: 15px;
+	font-size: 20px;
 	font-weight: 400;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Oswald', sans-serif;
 }
 .productWrapper {
 	height: 300px;
@@ -500,10 +606,7 @@ FOOTER STYLES
 .brandLogo {
 	font-size: 70px;
 }
-.brandLogo:hover{
-	font-size: 75px;
-	transition: 0.5s;
-}
+
 .shopIcon {
 	font-size: 30px; 
 }
@@ -520,4 +623,15 @@ FOOTER STYLES
 	top: 50%;
 	transform: translateY(-50%);
 	color: #383838;
+	font-family: 'Oswald', sans-serif;
+}
+.adminIcon{
+	font-size: 30px;
+
+}
+.featuredImage {
+	width: 100%;
+	height: 300px;
+	border-radius: 20px;
+
 }
